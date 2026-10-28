@@ -103,6 +103,18 @@ h2{font-size:clamp(28px,3.6vw,40px);letter-spacing:-1px;margin:10px 0 8px;line-h
 .store:hover{border-color:var(--cyan)}
 .note{font-size:12.5px;color:var(--dim);margin-top:16px}
 
+/* personal project */
+.proj{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:var(--r);padding:28px}
+.proj-ic{width:96px;height:96px;border-radius:22px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(94,230,168,.25),rgba(79,209,255,.18));border:1px solid rgba(94,230,168,.35)}
+.proj-ic svg{width:52px;height:52px}
+.proj h3{margin:0 0 4px;font-size:22px}
+.proj .status{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11.5px;font-weight:700;color:var(--gold);border:1px solid rgba(255,209,102,.4);background:rgba(255,209,102,.08);padding:4px 10px;border-radius:999px;margin:6px 0 12px}
+.proj .status i{width:7px;height:7px;border-radius:50%;background:var(--gold);animation:blink 1.6s steps(1) infinite}
+.proj p{margin:0 0 14px;color:var(--muted);font-size:15px}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;margin:0 0 16px;padding:0;list-style:none;color:var(--muted);font-size:14.5px}
+.feat li::before{content:"✓ ";color:var(--green);font-weight:700}
+@media (max-width:620px){.proj{grid-template-columns:1fr}.feat{grid-template-columns:1fr}}
+
 /* approach */
 .approach{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .step{background:rgba(15,26,56,.65);border:1px solid var(--line);border-radius:var(--r);padding:22px}
@@ -218,8 +230,8 @@ footer{padding:36px 0 48px;color:var(--dim);font-size:13px;text-align:center}
   <div class="wrap">
     <div class="stats">
       <div class="stat"><b>7</b><span data-i18n="st.years">anos em qualidade de software</span></div>
-      <div class="stat"><b>7</b><span data-i18n="st.games">jogos publicados no portfólio</span></div>
-      <div class="stat"><b class="grad">7M+</b><span data-i18n="st.dl">downloads somados na Google Play</span></div>
+      <div class="stat"><b>6</b><span data-i18n="st.games">jogos publicados no portfólio</span></div>
+      <div class="stat"><b class="grad">21M+</b><span data-i18n="st.dl">downloads somados na Google Play</span></div>
       <div class="stat"><b>5</b><span data-i18n="st.team">QAs no time que lidero</span></div>
     </div>
   </div>
@@ -232,6 +244,31 @@ footer{padding:36px 0 48px;color:var(--dim);font-size:13px;text-align:center}
     <p class="sub" data-i18n="g.sub">Produtos no ar, com jogadores reais. Fui responsável pela qualidade como QA na Fontec (MegaJogos / GameVelvet). Clique e jogue.</p>
     <div class="games" id="games"></div>
     <p class="note" data-i18n="g.note">Downloads e notas conforme a Google Play em outubro de 2026.</p>
+  </div>
+</section>
+
+<section id="projeto" style="padding-top:20px">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="p.eyebrow">// projeto pessoal</div>
+    <h2 data-i18n="p.title">Fora do trabalho, também construo</h2>
+    <p class="sub" data-i18n="p.sub">Um app próprio, do zero, para entender o produto pelo lado de quem desenvolve.</p>
+    <article class="proj">
+      <div class="proj-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#5ee6a8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3.5h2.6l2.4 11.2a1.6 1.6 0 0 0 1.6 1.3h8.6a1.6 1.6 0 0 0 1.6-1.2l1.7-7.3H6"/><path d="m10.5 10.6 2 2 3.6-3.8"/></svg></div>
+      <div>
+        <h3 data-i18n="p.name">Lista de Compras</h3>
+        <span class="status"><i></i><span data-i18n="p.status">EM DESENVOLVIMENTO</span></span>
+        <p data-i18n="p.desc">App Android para organizar compras do dia a dia, com várias listas, preços e comparação entre comércios.</p>
+        <ul class="feat">
+          <li data-i18n="p.f1">Várias listas, categorias e sugestões</li>
+          <li data-i18n="p.f2">Preço unitário × quantidade e totais</li>
+          <li data-i18n="p.f3">Comparação de preços entre comércios</li>
+          <li data-i18n="p.f4">Histórico e relatórios de gastos</li>
+          <li data-i18n="p.f5">Entrada por voz e widget</li>
+          <li data-i18n="p.f6">Tema claro e escuro, 6 idiomas</li>
+        </ul>
+        <div class="tags"><span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">Android</span><span class="tag" data-i18n="p.t1">Banco de dados local</span></div>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -352,42 +389,36 @@ const GAMES = [
     en:"The company's flagship app: 40+ card and board games such as Buraco, Truco and Dominoes, played online against real people.",
     tags:{pt:["Multiplayer online","Mobile","Regressão"],en:["Online multiplayer","Mobile","Regression"]},
     play:"air.br.com.megajogos.mobile", ios:"https://apps.apple.com/br/app/megajogos-cartas-e-tabuleiro/id570050950" },
-  { name:"Conquian: Jogo de Cartas", icon:ICON("2RG4QioT74leiauC56_aW_ufA625iJW1tcim7WktN_xOjplxKNJ5kADBzWx_SJW6RPE4s5zDhYTQIGWGb0yz"),
-    dl:"1M+",
-    pt:"Versão online do tradicional jogo de cartas mexicano, feita para o mercado latino-americano.",
-    en:"Online version of the traditional Mexican card game, built for the Latin American market.",
-    tags:{pt:["Multiplayer online","Mobile","Localização"],en:["Online multiplayer","Mobile","Localization"]},
-    play:"air.br.com.conquian.mobile" },
+  { name:"Dominó MegaJogos", icon:ICON("dBWFjJDao4byHKMlOSMalPZr7QHNSbdmHR2FrM-Ex97A0IhGDMFs-Oaytv8LlGhcfM3vomY6FxY8AnptcRrasQ"),
+    dl:"10M+", rating:"4,6", ratingEn:"4.6",
+    pt:"Dominó online com jogadores reais, em duplas ou individual, com ranking, torneios e regras oficiais.",
+    en:"Online dominoes with real players, in pairs or solo, with rankings, tournaments and official rules.",
+    tags:{pt:["Multiplayer online","Torneios","Mobile"],en:["Online multiplayer","Tournaments","Mobile"]},
+    play:"air.br.com.domino.mobile" },
+  { name:"Cacheta MegaJogos", icon:ICON("R6z4by5lnyvNVMWTYkMh4G2_ik1Rl8tqsE4Q4Uw_lhQmBHCl1lfgEr8omOhfleoPFqUea0YE_aMkaWrICh98M6E"),
+    dl:"5M+", rating:"4,7", ratingEn:"4.7",
+    pt:"Cacheta (Pife, Pontinho) online para jogar com amigos e milhares de jogadores reais, com torneios e troféus.",
+    en:"Cacheta, a Brazilian rummy-style card game, played online with friends and thousands of real players, with tournaments and trophies.",
+    tags:{pt:["Multiplayer online","Torneios","Mobile"],en:["Online multiplayer","Tournaments","Mobile"]},
+    play:"air.br.com.cacheta.mobile" },
   { name:"Bingo Online MegaJogos", icon:ICON("776RyhxR_WdyYXqdlfFnibpDXZDkg-bjrqJGien7psshqXPnZIFpo4Ktv30rjZCF1V3Zhg7gV1OTo4Ezg_-vq7I"),
     dl:"1M+", rating:"4,7", ratingEn:"4.7",
     pt:"Bingo online com salas temáticas e partidas em tempo real com milhares de jogadores.",
     en:"Online bingo with themed rooms and real-time matches with thousands of players.",
     tags:{pt:["Tempo real","Mobile"],en:["Real-time","Mobile"]},
     play:"air.br.com.bingo.mobile", ios:"https://apps.apple.com/br/app/mega-bingo-online/id1384746175" },
-  { name:"Sueca Taverna", icon:ICON("hiyPwL2B-wsUn6GP8EDx7AkNmR8pbMkHEfp1JquY-TYm3A6HsR7t1vPUTGaCQ_NxQqMYHl5Mcn02h_SJ3kUGQA"),
-    dl:"10K+", rating:"4,0", ratingEn:"4.0", since:{pt:"mai/2025 – atual",en:"May 2025 – present"},
-    pt:"Sueca online em dupla, com ambientação de taverna. Acompanho a qualidade do jogo desde o início do projeto.",
-    en:"Online partnership Sueca with a tavern theme. I've owned quality on this game since the start of the project.",
-    tags:{pt:["Novo lançamento","Multiplayer online","Mobile"],en:["New launch","Online multiplayer","Mobile"]},
-    play:"com.gamevelvet.sueca", ios:"https://apps.apple.com/br/app/sueca-taverna/id6757761986" },
   { name:"Paciência MegaJogos", icon:ICON("8Xybsf5CE2lySketFtWHG0OgndJXR-HrwSP9qwcq23BU3Q3yaavEnjlG1e0x4HokoaD5tUXjLgyzLSX94uwb"),
     dl:"50K+", rating:"4,8", ratingEn:"4.8",
     pt:"A clássica paciência com modos competitivos e ranking.",
     en:"Classic solitaire with competitive modes and rankings.",
     tags:{pt:["Single-player","Mobile"],en:["Single-player","Mobile"]},
     play:"air.br.com.solitaire.mobile" },
-  { name:"Scopa Online", icon:ICON("h9spQKm3O_mhVndxDcD5oV5mQEUegAtY2JPgCvLS8G7TqbeYwJErGRf3LissRzmKETTSdPypDbm_bZEJCXlvimI"),
-    dl:"50K+", rating:"4,6", ratingEn:"4.6",
-    pt:"O tradicional jogo de cartas italiano (Escopa), jogado online.",
-    en:"The traditional Italian card game (Scopa), played online.",
-    tags:{pt:["Multiplayer online","Mobile"],en:["Online multiplayer","Mobile"]},
-    play:"air.br.com.scopa.mobile" },
-  { name:"Gin Rummy MegaJogos", icon:ICON("fO2nmv4bGKFwd-rUTYHVDV1FPYP3cAwkc502TJWjrVuBcOxwZB72SR6ofXzAstvP4-WKpXdypF2sybfkUkoSTG0"),
-    dl:"50K+", rating:"4,2", ratingEn:"4.2",
-    pt:"Gin Rummy com partidas dinâmicas e desafios, para o público internacional.",
-    en:"Gin Rummy with fast-paced matches and challenges, for an international audience.",
-    tags:{pt:["Multiplayer online","Mobile"],en:["Online multiplayer","Mobile"]},
-    play:"air.br.com.ginrummy.mobile" },
+  { name:"Sueca Taverna", icon:ICON("hiyPwL2B-wsUn6GP8EDx7AkNmR8pbMkHEfp1JquY-TYm3A6HsR7t1vPUTGaCQ_NxQqMYHl5Mcn02h_SJ3kUGQA"),
+    dl:"10K+", rating:"4,0", ratingEn:"4.0", since:{pt:"mai/2025 – atual",en:"May 2025 – present"},
+    pt:"Sueca online em dupla, com ambientação de taverna. Acompanho a qualidade do jogo desde o início do projeto.",
+    en:"Online partnership Sueca with a tavern theme. I've owned quality on this game since the start of the project.",
+    tags:{pt:["Novo lançamento","Multiplayer online","Mobile"],en:["New launch","Online multiplayer","Mobile"]},
+    play:"com.gamevelvet.sueca", ios:"https://apps.apple.com/br/app/sueca-taverna/id6757761986" },
 ];
 
 const I18N = { en:{
@@ -426,6 +457,9 @@ const I18N = { en:{
  "f.edu":"Education","f.e1":"Bachelor's in IT Management · Anhanguera","f.e2":"Associate degree in Computer Networks · SENAI Florianópolis","f.e3":"Associate degree in Technology Management · SENAC Florianópolis",
  "f.cert":"Certifications & courses","f.c2":"Performance Testing · 4ALL Tests","f.c4":"Scrum in Practice · Udemy","f.c5":"Automated Testing · Udemy",
  "c.eyebrow":"// contact","c.title":"Let's talk?","c.sub":"Open to Senior QA or QA Lead roles, ideally in games, in Brazil or remote. Advanced English.","c.mail":"Send an email",
+ "p.eyebrow":"// side project","p.title":"Outside work, I build too","p.sub":"My own app, built from scratch, to understand the product from a developer's side.",
+ "p.name":"Shopping List","p.status":"IN DEVELOPMENT","p.desc":"Android app to organize everyday shopping, with multiple lists, prices and store comparison.",
+ "p.f1":"Multiple lists, categories and suggestions","p.f2":"Unit price × quantity and totals","p.f3":"Price comparison across stores","p.f4":"Spending history and reports","p.f5":"Voice input and home-screen widget","p.f6":"Light and dark themes, 6 languages","p.t1":"Local database",
  "foot":"Built with HTML and CSS, tested before shipping."
 }};
 
