@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jean Jonas da Silva | QA Lead & QA Sênior em Games</title>
+<meta name="description" content="QA Lead e QA Sênior especializado em games. 7 anos em qualidade de software, automação de testes e liderança de times de QA.">
+<meta property="og:title" content="Jean Jonas da Silva | QA Lead & QA Sênior em Games">
+<meta property="og:description" content="Jogos que ajudei a entregar, experiência e competências em qualidade de software para games.">
+<meta property="og:image" content="https://jeanjonas.github.io/og-banner.jpg">
+<meta property="og:url" content="https://jeanjonas.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1430'/%3E%3Cpath d='M16 33l10 10 22-22' stroke='%235ee6a8' stroke-width='7' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#070b18; --bg2:#0b1430; --card:#0f1a38; --card2:#121f44; --line:rgba(120,160,255,.14);
+  --text:#e8eeff; --muted:#93a6d6; --dim:#62729e;
+  --cyan:#4fd1ff; --violet:#a77bff; --green:#5ee6a8; --pink:#ff6b8a; --gold:#ffd166;
+  --mono:"JetBrains Mono","DejaVu Sans Mono",ui-monospace,monospace;
+  --sans:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --r:16px; --max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;
+  background:
+   radial-gradient(900px 500px at 85% -5%, rgba(79,209,255,.12), transparent 60%),
+   radial-gradient(700px 500px at -10% 30%, rgba(167,123,255,.12), transparent 60%),
+   linear-gradient(rgba(90,140,255,.045) 1px,transparent 1px) 0 0/44px 44px,
+   linear-gradient(90deg,rgba(90,140,255,.045) 1px,transparent 1px) 0 0/44px 44px,
+   var(--bg);}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(7,11,24,.78);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700}
+.logo{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:linear-gradient(135deg,var(--cyan),var(--violet));color:#071022;font-family:var(--mono);font-weight:700;font-size:14px}
+.links{display:flex;align-items:center;gap:22px;font-size:14px;color:var(--muted)}
+.links a:hover{color:var(--text)}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-family:var(--mono);font-size:12px}
+.lang button{background:none;border:0;color:var(--muted);padding:6px 11px;cursor:pointer;font:inherit}
+.lang button.on{background:var(--cyan);color:#071022;font-weight:700}
+
+/* hero */
+.hero{padding:76px 0 40px}
+.hero .grid2{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);border:1px solid var(--line);background:rgba(15,26,56,.6);padding:6px 12px;border-radius:999px}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
+h1{font-size:clamp(36px,5vw,58px);line-height:1.04;letter-spacing:-1.5px;margin:20px 0 18px;font-weight:800}
+.grad{background:linear-gradient(90deg,var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:18px;color:var(--muted);max-width:560px;margin:0 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;font-weight:600;font-size:15px;border:1px solid var(--line);background:rgba(15,26,56,.6);transition:.15s}
+.btn:hover{border-color:var(--cyan);transform:translateY(-1px)}
+.btn.primary{background:linear-gradient(90deg,var(--green),var(--cyan));color:#061224;border:0}
+.btn svg{width:18px;height:18px}
+
+.term{background:#0a1126;border:1px solid var(--line);border-radius:var(--r);box-shadow:0 30px 80px rgba(0,0,0,.45),0 0 0 1px rgba(79,209,255,.06) inset;overflow:hidden}
+.term-top{display:flex;align-items:center;gap:7px;padding:12px 14px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12px;color:var(--dim)}
+.term-top b{width:11px;height:11px;border-radius:50%;display:inline-block}
+.term-top span{margin-left:8px}
+.term pre{margin:0;padding:18px 18px 20px;font-family:var(--mono);font-size:13.5px;line-height:1.85;color:#9fb2e6;white-space:pre-wrap;min-height:290px}
+.ok{color:var(--green);font-weight:700}.k{color:var(--cyan)}.c{color:var(--dim)}.v{color:var(--violet)}
+.cursor{display:inline-block;width:8px;height:16px;background:var(--cyan);vertical-align:-3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px}
+.stat{background:rgba(15,26,56,.7);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.stat b{display:block;font-size:34px;font-weight:800;letter-spacing:-1px;line-height:1.1}
+.stat span{color:var(--muted);font-size:14px}
+
+/* sections */
+section{padding:80px 0}
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:2px;color:var(--green);text-transform:uppercase}
+h2{font-size:clamp(28px,3.6vw,40px);letter-spacing:-1px;margin:10px 0 8px;line-height:1.15}
+.sub{color:var(--muted);margin:0 0 36px;max-width:640px}
+
+/* games */
+.games{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+.game{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:.2s}
+.game:hover{transform:translateY(-3px);border-color:rgba(79,209,255,.4)}
+.game-top{position:relative;height:150px;display:grid;place-items:center;overflow:hidden}
+.game-top .blur{position:absolute;inset:-30px;background-size:cover;background-position:center;filter:blur(28px) saturate(1.3);opacity:.55;transform:scale(1.2)}
+.game-top img{position:relative;width:100px;height:100px;border-radius:22px;box-shadow:0 12px 30px rgba(0,0,0,.45)}
+.badge{position:absolute;top:12px;left:12px;font-family:var(--mono);font-size:11px;font-weight:700;padding:4px 9px;border-radius:999px;background:rgba(7,11,24,.75);border:1px solid rgba(94,230,168,.45);color:var(--green)}
+.game-body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.game h3{margin:0;font-size:20px;letter-spacing:-.3px}
+.meta{font-size:13px;color:var(--dim)}
+.nums{display:flex;gap:18px;font-size:14px;color:var(--muted)}
+.nums b{color:var(--gold);font-size:16px;margin-right:4px}
+.game p{margin:0;color:var(--muted);font-size:14.5px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-family:var(--mono);font-size:11.5px;padding:4px 9px;border-radius:7px;background:rgba(79,209,255,.08);border:1px solid rgba(79,209,255,.22);color:#bfe9ff}
+.stores{display:flex;gap:8px;margin-top:auto;padding-top:6px}
+.store{font-size:13px;font-weight:600;padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:rgba(7,11,24,.4)}
+.store:hover{border-color:var(--cyan)}
+.note{font-size:12.5px;color:var(--dim);margin-top:16px}
+
+/* approach */
+.approach{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step{background:rgba(15,26,56,.65);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.step .n{font-family:var(--mono);font-size:12px;color:var(--violet)}
+.step h3{margin:6px 0 8px;font-size:18px}
+.step p{margin:0;color:var(--muted);font-size:14.5px}
+
+/* timeline */
+.tl{position:relative;margin-left:8px}
+.tl::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--cyan),var(--violet),transparent)}
+.job{position:relative;padding:0 0 30px 30px}
+.job::before{content:"";position:absolute;left:-6px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--cyan)}
+.job.now::before{border-color:var(--green);box-shadow:0 0 12px var(--green)}
+.job h3{margin:0;font-size:19px}
+.job .when{font-family:var(--mono);font-size:12.5px;color:var(--dim);margin:2px 0 8px}
+.job ul{margin:0;padding-left:18px;color:var(--muted);font-size:14.5px}
+.job li{margin:3px 0}
+.company{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.company b{font-size:22px}.company span{color:var(--muted);font-size:14px}
+.older{margin-top:8px;color:var(--muted);font-size:14.5px;border-top:1px dashed var(--line);padding-top:18px}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.skill{background:rgba(15,26,56,.65);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.skill h3{margin:0 0 12px;font-size:15px;color:var(--cyan);font-family:var(--mono);font-weight:600}
+.skill ul{list-style:none;margin:0;padding:0;font-size:14.5px;color:var(--muted)}
+.skill li{padding:4px 0;border-bottom:1px solid rgba(120,160,255,.07)}
+.skill li:last-child{border:0}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.box{background:rgba(15,26,56,.65);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.box h3{margin:0 0 14px;font-size:17px}
+.row{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid rgba(120,160,255,.08);font-size:14.5px}
+.row:last-child{border:0}
+.row span{color:var(--muted)}.row em{font-style:normal;color:var(--dim);font-family:var(--mono);font-size:12.5px;white-space:nowrap}
+
+/* contact */
+.contact{text-align:center;background:linear-gradient(135deg,rgba(79,209,255,.1),rgba(167,123,255,.12));border:1px solid var(--line);border-radius:24px;padding:56px 24px}
+.contact .cta{justify-content:center}
+footer{padding:36px 0 48px;color:var(--dim);font-size:13px;text-align:center}
+
+@media (max-width:900px){
+  .hero .grid2{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .approach{grid-template-columns:1fr}
+  .skills{grid-template-columns:repeat(2,1fr)}
+  .two{grid-template-columns:1fr}
+  .links a{display:none}
+}
+@media (max-width:520px){
+  h1{font-size:clamp(28px,8.6vw,40px);letter-spacing:-1px}
+  .wrap{padding:0 16px}
+  .hero{padding-top:44px}
+  .games{grid-template-columns:1fr}
+  .skills{grid-template-columns:1fr}
+  .stat b{font-size:28px}
+  .term pre{font-size:12px;min-height:0}
+  .brand .name{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="logo">JJ</span><span class="name">Jean Jonas da Silva</span></a>
+    <div class="links">
+      <a href="#jogos" data-i18n="nav.games">Jogos</a>
+      <a href="#experiencia" data-i18n="nav.exp">Experiência</a>
+      <a href="#competencias" data-i18n="nav.skills">Competências</a>
+      <a href="#contato" data-i18n="nav.contact">Contato</a>
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-lang="pt" class="on">PT</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap grid2">
+    <div>
+      <span class="pill"><i></i><span data-i18n="hero.pill">Aberto a oportunidades · Brasil e remoto</span></span>
+      <h1><span data-i18n="hero.h1a" style="white-space:nowrap">QA Lead &amp; QA Sênior</span><br><span class="grad" data-i18n="hero.h1b">em games.</span></h1>
+      <p class="lead" data-i18n="hero.lead">7 anos garantindo a qualidade de jogos online de cartas e tabuleiro jogados por milhões de pessoas. Testo, automatizo e lidero: hoje coordeno um time de 5 QAs sem largar a mão na massa.</p>
+      <div class="cta">
+        <a class="btn primary" href="#jogos" data-i18n="hero.cta">Ver jogos entregues</a>
+        <a class="btn" href="https://www.linkedin.com/in/jeanjonas/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
+        <a class="btn" href="mailto:jeansilvaqa@gmail.com" data-mail>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>E-mail</a>
+      </div>
+    </div>
+
+    <div class="term" aria-hidden="true">
+      <div class="term-top"><b style="background:#ff6b8a"></b><b style="background:#ffd166"></b><b style="background:#5ee6a8"></b><span>jean@qa: ~/games</span></div>
+<pre><span class="k">$</span> pytest games/ --suite regression
+<span class="ok">PASSED</span> test_card_deal_rules
+<span class="ok">PASSED</span> test_multiplayer_sync
+<span class="ok">PASSED</span> test_match_reconnect
+<span class="ok">PASSED</span> test_score_calculation
+<span class="k">$</span> npx cypress run --spec lobby
+<span class="ok">✓</span> <span class="c">lobby › entrar na mesa</span>
+<span class="ok">✓</span> <span class="c">lobby › convidar amigo</span>
+<span class="k">$</span> appium --suite mobile-smoke
+<span class="ok">✓</span> <span class="c">android · ios</span>
+<span class="v">→</span> build <span class="ok">✓</span>  test <span class="ok">✓</span>  deploy <span class="ok">✓</span>
+<span class="k">$</span> <span class="cursor"></span></pre>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><b>7</b><span data-i18n="st.years">anos em qualidade de software</span></div>
+      <div class="stat"><b>7</b><span data-i18n="st.games">jogos publicados no portfólio</span></div>
+      <div class="stat"><b class="grad">7M+</b><span data-i18n="st.dl">downloads somados na Google Play</span></div>
+      <div class="stat"><b>5</b><span data-i18n="st.team">QAs no time que lidero</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="jogos">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="g.eyebrow">// jogos entregues</div>
+    <h2 data-i18n="g.title">Jogos que ajudei a entregar</h2>
+    <p class="sub" data-i18n="g.sub">Produtos no ar, com jogadores reais. Fui responsável pela qualidade como QA na Fontec (MegaJogos / GameVelvet). Clique e jogue.</p>
+    <div class="games" id="games"></div>
+    <p class="note" data-i18n="g.note">Downloads e notas conforme a Google Play em outubro de 2026.</p>
+  </div>
+</section>
+
+<section id="como">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="a.eyebrow">// como eu trabalho</div>
+    <h2 data-i18n="a.title">Qualidade do refinamento ao release</h2>
+    <p class="sub" data-i18n="a.sub">Em jogo online, bug vira jogador perdido. Por isso a qualidade entra cedo e não sai do processo.</p>
+    <div class="approach">
+      <div class="step"><div class="n">01 · shift-left</div><h3 data-i18n="a.1t">QA desde o refinamento</h3><p data-i18n="a.1p">Participo das definições com Engenharia, Design e Produto para antecipar riscos e regras de jogo ambíguas antes do código.</p></div>
+      <div class="step"><div class="n">02 · automation</div><h3 data-i18n="a.2t">Automação onde dá retorno</h3><p data-i18n="a.2p">Regressão automatizada com Python, Cypress, Appium e Unity, integrada ao CI/CD. Testes manuais e exploratórios onde o olhar humano faz diferença.</p></div>
+      <div class="step"><div class="n">03 · metrics</div><h3 data-i18n="a.3t">Decisão com dados</h3><p data-i18n="a.3p">KPIs de bugs e estabilidade que orientam o go/no-go de cada release e mostram onde investir esforço de teste.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="experiencia">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="e.eyebrow">// experiência</div>
+    <h2 data-i18n="e.title">De estagiário a coordenador de QA</h2>
+    <p class="sub" data-i18n="e.sub">Toda a minha trajetória em qualidade foi construída na mesma empresa, junto com os jogos.</p>
+    <div class="company"><b>Fontec</b><span data-i18n="e.co">MegaJogos / GameVelvet · Florianópolis · jun/2019 – atual</span></div>
+    <div class="tl">
+      <div class="job now">
+        <h3 data-i18n="e.j1">Coordenador de Qualidade de Software</h3>
+        <div class="when" data-i18n="e.j1w">mai/2022 – atual</div>
+        <ul>
+          <li data-i18n="e.j1a">Lidero e mentoro um time de 5 QAs (analistas e testers), com plano de carreira individual.</li>
+          <li data-i18n="e.j1b">Estruturei a estratégia de testes automatizados para ampliar a cobertura de regressão.</li>
+          <li data-i18n="e.j1c">Integrei o QA às cerimônias do Scrum, encurtando o ciclo de feedback entre desenvolvimento e testes.</li>
+          <li data-i18n="e.j1d">Criei KPIs de bugs e estabilidade e atuo na melhoria das pipelines de CI/CD.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3 data-i18n="e.j2">Analista de Qualidade de Software</h3>
+        <div class="when" data-i18n="e.j2w">set/2021 – mai/2022</div>
+        <ul>
+          <li data-i18n="e.j2a">Padronizei o reporte de bugs e o processo de homologação.</li>
+          <li data-i18n="e.j2b">Introduzi testes exploratórios voltados a jogos, aumentando a detecção de falhas críticas antes do lançamento.</li>
+          <li data-i18n="e.j2c">Criei e mantive suítes de regressão e de novas funcionalidades.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3 data-i18n="e.j3">Técnico de Garantia de Qualidade</h3>
+        <div class="when" data-i18n="e.j3w">abr/2020 – ago/2021</div>
+        <ul><li data-i18n="e.j3a">Ajudei a estruturar o processo de QA da empresa desde o início: testes em homologação, validação de correções e documentação.</li></ul>
+      </div>
+      <div class="job">
+        <h3 data-i18n="e.j4">Estágio em Testes</h3>
+        <div class="when" data-i18n="e.j4w">jun/2019 – abr/2020</div>
+        <ul><li data-i18n="e.j4a">Testes funcionais e de jogabilidade, reporte de bugs e criação de cenários de teste.</li></ul>
+      </div>
+    </div>
+    <p class="older" data-i18n="e.older">Antes de QA: suporte técnico e infraestrutura na Cetil Sistemas (2012–2014) e no Hospital Universitário da UFSC (2009–2010).</p>
+  </div>
+</section>
+
+<section id="competencias">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="s.eyebrow">// competências</div>
+    <h2 data-i18n="s.title">O que eu levo para o time</h2>
+    <p class="sub" data-i18n="s.sub">Técnica de teste, automação e gestão, sempre com o olhar de quem conhece jogo por dentro.</p>
+    <div class="skills">
+      <div class="skill"><h3 data-i18n="s.c1">Testes em games</h3><ul>
+        <li data-i18n="s.c1a">Regras de jogo e gameplay</li><li data-i18n="s.c1b">Multiplayer online</li><li data-i18n="s.c1c">Testes exploratórios</li><li data-i18n="s.c1d">Regressão e homologação</li><li data-i18n="s.c1e">Mobile (Android e iOS)</li></ul></div>
+      <div class="skill"><h3 data-i18n="s.c2">Automação</h3><ul>
+        <li>Python</li><li>Cypress</li><li>Appium</li><li>Unity3D</li><li>CI/CD</li></ul></div>
+      <div class="skill"><h3 data-i18n="s.c3">Ferramentas</h3><ul>
+        <li>Jira</li><li>Git</li><li>SQL</li><li data-i18n="s.c3a">Testes de performance</li><li>Linux</li></ul></div>
+      <div class="skill"><h3 data-i18n="s.c4">Liderança e processo</h3><ul>
+        <li data-i18n="s.c4a">Gestão de time de QA</li><li data-i18n="s.c4b">Mentoria e plano de carreira</li><li>Scrum &amp; Kanban</li><li data-i18n="s.c4c">KPIs de qualidade</li><li>Shift-left testing</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="formacao" style="padding-top:20px">
+  <div class="wrap two">
+    <div class="box">
+      <h3 data-i18n="f.edu">Formação</h3>
+      <div class="row"><span data-i18n="f.e1">Bacharelado em Gestão de TI · Anhanguera</span><em>2019–2022</em></div>
+      <div class="row"><span data-i18n="f.e2">Tecnólogo em Redes de Computadores · SENAI Florianópolis</span><em>2013–2014</em></div>
+      <div class="row"><span data-i18n="f.e3">Tecnólogo em Gestão de Tecnologia · SENAC Florianópolis</span><em>2008–2010</em></div>
+    </div>
+    <div class="box">
+      <h3 data-i18n="f.cert">Certificações e cursos</h3>
+      <div class="row"><span>TDC · DevTest IA</span><em>2025</em></div>
+      <div class="row"><span data-i18n="f.c2">Testes de Performance · 4ALL Tests</span><em>2025</em></div>
+      <div class="row"><span>TDC · Quality Management</span><em>2024</em></div>
+      <div class="row"><span data-i18n="f.c4">Scrum na Prática · Udemy</span><em>2024</em></div>
+      <div class="row"><span data-i18n="f.c5">Testes Automatizados · Udemy</span><em>2021</em></div>
+    </div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="wrap">
+    <div class="contact">
+      <div class="eyebrow" data-i18n="c.eyebrow">// contato</div>
+      <h2 data-i18n="c.title">Vamos conversar?</h2>
+      <p class="sub" style="margin:0 auto 28px" data-i18n="c.sub">Aberto a posições de QA Sênior ou QA Lead, de preferência em games, no Brasil ou remoto. Inglês avançado.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:jeansilvaqa@gmail.com" data-mail data-i18n="c.mail">Mandar e-mail</a>
+        <a class="btn" href="https://www.linkedin.com/in/jeanjonas/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/jeanjonas" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">© 2026 Jean Jonas da Silva · <span data-i18n="foot">Feito com HTML e CSS, testado antes de publicar.</span></div></footer>
+
+<script>
+const ICON = id => `https://play-lh.googleusercontent.com/${id}=s256-rw`;
+const GAMES = [
+  { name:"MegaJogos: Cartas e Tabuleiro", icon:ICON("kxlfNgNQxkscaFyXwWd7ESNLqkx-poJnBm5KcGsQXBHFQI2gdWuQy6P76Wx2f2Rdgf5I4EUZAO46VVoq8223ppc"),
+    dl:"5M+", rating:"4,7", ratingEn:"4.7", flagship:true,
+    pt:"App principal da empresa, com mais de 40 jogos de cartas e tabuleiro, como Buraco, Truco e Dominó, jogados online com pessoas reais.",
+    en:"The company's flagship app: 40+ card and board games such as Buraco, Truco and Dominoes, played online against real people.",
+    tags:{pt:["Multiplayer online","Mobile","Regressão"],en:["Online multiplayer","Mobile","Regression"]},
+    play:"air.br.com.megajogos.mobile", ios:"https://apps.apple.com/br/app/megajogos-cartas-e-tabuleiro/id570050950" },
+  { name:"Conquian: Jogo de Cartas", icon:ICON("2RG4QioT74leiauC56_aW_ufA625iJW1tcim7WktN_xOjplxKNJ5kADBzWx_SJW6RPE4s5zDhYTQIGWGb0yz"),
+    dl:"1M+",
+    pt:"Versão online do tradicional jogo de cartas mexicano, feita para o mercado latino-americano.",
+    en:"Online version of the traditional Mexican card game, built for the Latin American market.",
+    tags:{pt:["Multiplayer online","Mobile","Localização"],en:["Online multiplayer","Mobile","Localization"]},
+    play:"air.br.com.conquian.mobile" },
+  { name:"Bingo Online MegaJogos", icon:ICON("776RyhxR_WdyYXqdlfFnibpDXZDkg-bjrqJGien7psshqXPnZIFpo4Ktv30rjZCF1V3Zhg7gV1OTo4Ezg_-vq7I"),
+    dl:"1M+", rating:"4,7", ratingEn:"4.7",
+    pt:"Bingo online com salas temáticas e partidas em tempo real com milhares de jogadores.",
+    en:"Online bingo with themed rooms and real-time matches with thousands of players.",
+    tags:{pt:["Tempo real","Mobile"],en:["Real-time","Mobile"]},
+    play:"air.br.com.bingo.mobile", ios:"https://apps.apple.com/br/app/mega-bingo-online/id1384746175" },
+  { name:"Sueca Taverna", icon:ICON("hiyPwL2B-wsUn6GP8EDx7AkNmR8pbMkHEfp1JquY-TYm3A6HsR7t1vPUTGaCQ_NxQqMYHl5Mcn02h_SJ3kUGQA"),
+    dl:"10K+", rating:"4,0", ratingEn:"4.0", since:{pt:"mai/2025 – atual",en:"May 2025 – present"},
+    pt:"Sueca online em dupla, com ambientação de taverna. Acompanho a qualidade do jogo desde o início do projeto.",
+    en:"Online partnership Sueca with a tavern theme. I've owned quality on this game since the start of the project.",
+    tags:{pt:["Novo lançamento","Multiplayer online","Mobile"],en:["New launch","Online multiplayer","Mobile"]},
+    play:"com.gamevelvet.sueca", ios:"https://apps.apple.com/br/app/sueca-taverna/id6757761986" },
+  { name:"Paciência MegaJogos", icon:ICON("8Xybsf5CE2lySketFtWHG0OgndJXR-HrwSP9qwcq23BU3Q3yaavEnjlG1e0x4HokoaD5tUXjLgyzLSX94uwb"),
+    dl:"50K+", rating:"4,8", ratingEn:"4.8",
+    pt:"A clássica paciência com modos competitivos e ranking.",
+    en:"Classic solitaire with competitive modes and rankings.",
+    tags:{pt:["Single-player","Mobile"],en:["Single-player","Mobile"]},
+    play:"air.br.com.solitaire.mobile" },
+  { name:"Scopa Online", icon:ICON("h9spQKm3O_mhVndxDcD5oV5mQEUegAtY2JPgCvLS8G7TqbeYwJErGRf3LissRzmKETTSdPypDbm_bZEJCXlvimI"),
+    dl:"50K+", rating:"4,6", ratingEn:"4.6",
+    pt:"O tradicional jogo de cartas italiano (Escopa), jogado online.",
+    en:"The traditional Italian card game (Scopa), played online.",
+    tags:{pt:["Multiplayer online","Mobile"],en:["Online multiplayer","Mobile"]},
+    play:"air.br.com.scopa.mobile" },
+  { name:"Gin Rummy MegaJogos", icon:ICON("fO2nmv4bGKFwd-rUTYHVDV1FPYP3cAwkc502TJWjrVuBcOxwZB72SR6ofXzAstvP4-WKpXdypF2sybfkUkoSTG0"),
+    dl:"50K+", rating:"4,2", ratingEn:"4.2",
+    pt:"Gin Rummy com partidas dinâmicas e desafios, para o público internacional.",
+    en:"Gin Rummy with fast-paced matches and challenges, for an international audience.",
+    tags:{pt:["Multiplayer online","Mobile"],en:["Online multiplayer","Mobile"]},
+    play:"air.br.com.ginrummy.mobile" },
+];
+
+const I18N = { en:{
+ "nav.games":"Games","nav.exp":"Experience","nav.skills":"Skills","nav.contact":"Contact",
+ "hero.pill":"Open to opportunities · Brazil & remote",
+ "hero.h1a":"QA Lead & Senior QA","hero.h1b":"for games.",
+ "hero.lead":"7 years ensuring quality for online card and board games played by millions. I test, automate and lead: today I manage a team of 5 QAs while staying hands-on.",
+ "hero.cta":"See shipped games",
+ "st.years":"years in software quality","st.games":"live games in this portfolio","st.dl":"combined downloads on Google Play","st.team":"QAs on the team I lead",
+ "g.eyebrow":"// shipped games","g.title":"Games I helped ship","g.sub":"Live products with real players. I was responsible for quality as a QA at Fontec (MegaJogos / GameVelvet). Click through and play.",
+ "g.note":"Downloads and ratings as shown on Google Play, October 2026.",
+ "a.eyebrow":"// how I work","a.title":"Quality from refinement to release","a.sub":"In an online game, a bug means a lost player. That's why quality comes in early and never leaves the process.",
+ "a.1t":"QA from refinement","a.1p":"I join definitions with Engineering, Design and Product to catch risks and ambiguous game rules before any code is written.",
+ "a.2t":"Automation where it pays off","a.2p":"Automated regression with Python, Cypress, Appium and Unity, wired into CI/CD. Manual and exploratory testing where a human eye makes the difference.",
+ "a.3t":"Data-driven decisions","a.3p":"Bug and stability KPIs that drive each release's go/no-go and show where test effort should go.",
+ "e.eyebrow":"// experience","e.title":"From intern to QA coordinator","e.sub":"My whole QA career was built at the same company, growing alongside its games.",
+ "e.co":"MegaJogos / GameVelvet · Florianópolis, Brazil · Jun 2019 – present",
+ "e.j1":"Software Quality Coordinator (QA Lead)","e.j1w":"May 2022 – present",
+ "e.j1a":"Lead and mentor a team of 5 QAs (analysts and testers) with individual career plans.",
+ "e.j1b":"Built the automated testing strategy to expand regression coverage.",
+ "e.j1c":"Brought QA into Scrum ceremonies, shortening the feedback loop between development and testing.",
+ "e.j1d":"Created bug and stability KPIs and work on improving CI/CD pipelines.",
+ "e.j2":"Software Quality Analyst","e.j2w":"Sep 2021 – May 2022",
+ "e.j2a":"Standardized bug reporting and the acceptance process.",
+ "e.j2b":"Introduced game-focused exploratory testing, catching more critical defects before launch.",
+ "e.j2c":"Built and maintained regression and new-feature test suites.",
+ "e.j3":"Quality Assurance Technician","e.j3w":"Apr 2020 – Aug 2021",
+ "e.j3a":"Helped build the company's QA process from scratch: staging tests, fix validation and documentation.",
+ "e.j4":"Testing Intern","e.j4w":"Jun 2019 – Apr 2020",
+ "e.j4a":"Functional and gameplay testing, bug reporting and test scenario design.",
+ "e.older":"Before QA: technical support and infrastructure at Cetil Sistemas (2012–2014) and the UFSC University Hospital (2009–2010).",
+ "s.eyebrow":"// skills","s.title":"What I bring to a team","s.sub":"Testing technique, automation and management, always from someone who knows games from the inside.",
+ "s.c1":"Game testing","s.c1a":"Game rules & gameplay","s.c1b":"Online multiplayer","s.c1c":"Exploratory testing","s.c1d":"Regression & acceptance","s.c1e":"Mobile (Android & iOS)",
+ "s.c2":"Automation","s.c3":"Tools","s.c3a":"Performance testing",
+ "s.c4":"Leadership & process","s.c4a":"QA team management","s.c4b":"Mentoring & career plans","s.c4c":"Quality KPIs",
+ "f.edu":"Education","f.e1":"Bachelor's in IT Management · Anhanguera","f.e2":"Associate degree in Computer Networks · SENAI Florianópolis","f.e3":"Associate degree in Technology Management · SENAC Florianópolis",
+ "f.cert":"Certifications & courses","f.c2":"Performance Testing · 4ALL Tests","f.c4":"Scrum in Practice · Udemy","f.c5":"Automated Testing · Udemy",
+ "c.eyebrow":"// contact","c.title":"Let's talk?","c.sub":"Open to Senior QA or QA Lead roles, ideally in games, in Brazil or remote. Advanced English.","c.mail":"Send an email",
+ "foot":"Built with HTML and CSS, tested before shipping."
+}};
+
+const PT = {};
+document.querySelectorAll('[data-i18n]').forEach(el=>PT[el.dataset.i18n]=el.textContent);
+
+function renderGames(lang){
+  const L = lang==='en';
+  document.getElementById('games').innerHTML = GAMES.map(g=>{
+    const play = `https://play.google.com/store/apps/details?id=${g.play}`;
+    const rating = g.rating ? `<span><b>${L?g.ratingEn:g.rating}★</b>Google Play</span>` : '';
+    const meta = g.since ? `Fontec · ${L?g.since.en:g.since.pt}` : (L?'Fontec · continuous QA':'Fontec · QA contínuo');
+    return `<article class="game">
+      <div class="game-top"><div class="blur" style="background-image:url('${g.icon}')"></div>
+        ${g.flagship?`<span class="badge">${L?'FLAGSHIP':'CARRO-CHEFE'}</span>`:''}
+        <img src="${g.icon}" alt="${L?'Icon of':'Ícone do'} ${g.name}" loading="lazy" width="100" height="100"></div>
+      <div class="game-body">
+        <h3>${g.name}</h3><div class="meta">${meta}</div>
+        <div class="nums"><span><b>${g.dl}</b>downloads</span>${rating}</div>
+        <p>${L?g.en:g.pt}</p>
+        <div class="tags">${(L?g.tags.en:g.tags.pt).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+        <div class="stores"><a class="store" href="${play}" target="_blank" rel="noopener">Google Play ↗</a>${g.ios?`<a class="store" href="${g.ios}" target="_blank" rel="noopener">App Store ↗</a>`:''}</div>
+      </div></article>`;
+  }).join('');
+}
+
+function setLang(lang){
+  document.documentElement.lang = lang==='en'?'en':'pt-BR';
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.dataset.i18n; el.textContent = lang==='en' ? (I18N.en[k]??PT[k]) : PT[k];
+  });
+  document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on', b.dataset.lang===lang));
+  renderGames(lang);
+  try{ localStorage.setItem('lang',lang) }catch(e){}
+}
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+
+let start='pt';
+const q=new URLSearchParams(location.search).get('lang');
+if(q==='en'||q==='pt') start=q;
+else { try{ start=localStorage.getItem('lang') || ((navigator.language||'').toLowerCase().startsWith('pt')?'pt':'en') }catch(e){ start=(navigator.language||'').toLowerCase().startsWith('pt')?'pt':'en' } }
+setLang(start);
+</script>
+</body>
+</html>
