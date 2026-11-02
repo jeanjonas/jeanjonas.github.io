@@ -113,7 +113,15 @@ h2{font-size:clamp(28px,3.6vw,40px);letter-spacing:-1px;margin:10px 0 8px;line-h
 .proj p{margin:0 0 14px;color:var(--muted);font-size:15px}
 .feat{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;margin:0 0 16px;padding:0;list-style:none;color:var(--muted);font-size:14.5px}
 .feat li::before{content:"✓ ";color:var(--green);font-weight:700}
-@media (max-width:620px){.proj{grid-template-columns:1fr}.feat{grid-template-columns:1fr}}
+.projs{display:grid;gap:20px}
+.proj-cover{display:block;width:240px;aspect-ratio:630/500;border-radius:16px;overflow:hidden;border:1px solid rgba(255,209,102,.35);background:#0b1430}
+.proj-cover img{width:100%;height:100%;object-fit:cover;display:block;transition:.2s}
+.proj-cover:hover img{transform:scale(1.03)}
+.proj .status.live{color:var(--green);border-color:rgba(94,230,168,.45);background:rgba(94,230,168,.08)}
+.proj .status.live i{background:var(--green);animation:none;box-shadow:0 0 8px var(--green)}
+.proj .qa{border-left:3px solid var(--violet);padding:2px 0 2px 12px;color:var(--text,#e6ecff);font-size:14.5px}
+.proj .btn{margin-top:16px;padding:10px 16px;font-size:14px}
+@media (max-width:620px){.proj{grid-template-columns:1fr}.feat{grid-template-columns:1fr}.proj-cover{width:100%}}
 
 /* approach */
 .approach{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -249,9 +257,29 @@ footer{padding:36px 0 48px;color:var(--dim);font-size:13px;text-align:center}
 
 <section id="projeto" style="padding-top:20px">
   <div class="wrap">
-    <div class="eyebrow" data-i18n="p.eyebrow">// projeto pessoal</div>
+    <div class="eyebrow" data-i18n="p.eyebrow">// projetos pessoais</div>
     <h2 data-i18n="p.title">Fora do trabalho, também construo</h2>
-    <p class="sub" data-i18n="p.sub">Um app próprio, do zero, para entender o produto pelo lado de quem desenvolve.</p>
+    <p class="sub" data-i18n="p.sub">Projetos próprios, do zero, para entender o produto pelo lado de quem desenvolve.</p>
+    <div class="projs">
+    <article class="proj">
+      <a class="proj-cover" href="https://jeanqa.itch.io/escalada" target="_blank" rel="noopener"><img src="https://img.itch.zone/aW1nLzMxNzQwMDI1LnBuZw==/original/QF9I6B.png" alt="Capa do jogo Escalada" loading="lazy"></a>
+      <div>
+        <h3>Escalada</h3>
+        <span class="status live"><i></i><span data-i18n="e.status">PUBLICADO · v2.1.1 NO ITCH.IO</span></span>
+        <p data-i18n="e.desc">Jogo de plataforma vertical feito no Godot 4. Você é uma pequena chama escalando uma montanha de gelo: as bolas de fogo derretem os blocos e abrem caminho, enquanto a água sobe atrás de você. Roda no navegador, no computador e no celular.</p>
+        <p class="qa" data-i18n="e.qa">Conduzi como um projeto de QA: especificação em ondas, testes automáticos e roteiro de teste manual a cada versão, com IA como par de programação.</p>
+        <ul class="feat">
+          <li data-i18n="e.f1">5 fases e modo Remix após o andar 125</li>
+          <li data-i18n="e.f2">Desafio diário igual para todos</li>
+          <li data-i18n="e.f3">Loja de skins, 15 troféus e estatísticas</li>
+          <li data-i18n="e.f4">Teclado, gamepad e controles de toque</li>
+          <li data-i18n="e.f5">18 testes automáticos, com golden test dos mapas</li>
+          <li data-i18n="e.f6">Sementes reproduzíveis e ferramentas de debug</li>
+        </ul>
+        <div class="tags"><span class="tag">Godot 4</span><span class="tag">GDScript</span><span class="tag">HTML5</span><span class="tag" data-i18n="e.t1">Testes automatizados</span></div>
+        <a class="btn primary" href="https://jeanqa.itch.io/escalada" target="_blank" rel="noopener" data-i18n="e.cta">Jogar no itch.io →</a>
+      </div>
+    </article>
     <article class="proj">
       <div class="proj-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#5ee6a8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3.5h2.6l2.4 11.2a1.6 1.6 0 0 0 1.6 1.3h8.6a1.6 1.6 0 0 0 1.6-1.2l1.7-7.3H6"/><path d="m10.5 10.6 2 2 3.6-3.8"/></svg></div>
       <div>
@@ -269,6 +297,7 @@ footer{padding:36px 0 48px;color:var(--dim);font-size:13px;text-align:center}
         <div class="tags"><span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">Android</span><span class="tag" data-i18n="p.t1">Banco de dados local</span></div>
       </div>
     </article>
+    </div>
   </div>
 </section>
 
@@ -457,7 +486,9 @@ const I18N = { en:{
  "f.edu":"Education","f.e1":"Bachelor's in IT Management · Anhanguera","f.e2":"Associate degree in Computer Networks · SENAI Florianópolis","f.e3":"Associate degree in Technology Management · SENAC Florianópolis",
  "f.cert":"Certifications & courses","f.c2":"Performance Testing · 4ALL Tests","f.c4":"Scrum in Practice · Udemy","f.c5":"Automated Testing · Udemy",
  "c.eyebrow":"// contact","c.title":"Let's talk?","c.sub":"Open to Senior QA or QA Lead roles, ideally in games, in Brazil or remote. Advanced English.","c.mail":"Send an email",
- "p.eyebrow":"// side project","p.title":"Outside work, I build too","p.sub":"My own app, built from scratch, to understand the product from a developer's side.",
+ "p.eyebrow":"// side projects","p.title":"Outside work, I build too","p.sub":"My own projects, built from scratch, to understand the product from a developer's side.",
+ "e.status":"RELEASED · v2.1.1 ON ITCH.IO","e.desc":"Vertical platformer made in Godot 4. You're a little flame climbing a mountain of ice: fireballs melt the blocks and open the way while the water rises behind you. Plays in desktop and mobile browsers.","e.qa":"Run as a QA project: specs in waves, automated tests and a manual test script for every release, with AI as a pair programmer.",
+ "e.f1":"5 stages plus a Remix mode past floor 125","e.f2":"Daily Challenge, the same for everyone","e.f3":"Skin shop, 15 trophies and stats","e.f4":"Keyboard, gamepad and touch controls","e.f5":"18 automated tests, including a golden test of the maps","e.f6":"Reproducible seeds and debug tools","e.t1":"Automated testing","e.cta":"Play on itch.io →",
  "p.name":"Shopping List","p.status":"IN DEVELOPMENT","p.desc":"Android app to organize everyday shopping, with multiple lists, prices and store comparison.",
  "p.f1":"Multiple lists, categories and suggestions","p.f2":"Unit price × quantity and totals","p.f3":"Price comparison across stores","p.f4":"Spending history and reports","p.f5":"Voice input and home-screen widget","p.f6":"Light and dark themes, 6 languages","p.t1":"Local database",
  "foot":"Built with HTML and CSS, tested before shipping."
