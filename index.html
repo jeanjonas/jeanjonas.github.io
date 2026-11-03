@@ -107,6 +107,8 @@ h2{font-size:clamp(28px,3.6vw,40px);letter-spacing:-1px;margin:10px 0 8px;line-h
 .proj{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:var(--r);padding:28px}
 .proj-ic{width:96px;height:96px;border-radius:22px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(94,230,168,.25),rgba(79,209,255,.18));border:1px solid rgba(94,230,168,.35)}
 .proj-ic svg{width:52px;height:52px}
+.proj-ic.app{background:#0F1D3A;border:1px solid rgba(79,216,232,.45);overflow:hidden;box-shadow:0 0 0 4px rgba(79,216,232,.08)}
+.proj-ic.app svg{width:100%;height:100%;display:block}
 .proj h3{margin:0 0 4px;font-size:22px}
 .proj .status{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11.5px;font-weight:700;color:var(--gold);border:1px solid rgba(255,209,102,.4);background:rgba(255,209,102,.08);padding:4px 10px;border-radius:999px;margin:6px 0 12px}
 .proj .status i{width:7px;height:7px;border-radius:50%;background:var(--gold);animation:blink 1.6s steps(1) infinite}
@@ -281,20 +283,20 @@ footer{padding:36px 0 48px;color:var(--dim);font-size:13px;text-align:center}
       </div>
     </article>
     <article class="proj">
-      <div class="proj-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#5ee6a8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3.5h2.6l2.4 11.2a1.6 1.6 0 0 0 1.6 1.3h8.6a1.6 1.6 0 0 0 1.6-1.2l1.7-7.3H6"/><path d="m10.5 10.6 2 2 3.6-3.8"/></svg></div>
+      <div class="proj-ic app" aria-hidden="true"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#0F1D3A"/><g fill="none" stroke="#4FD8E8" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M36 50 C 26 51 22 41 28 35 C 25 26 34 19 42 22 C 46 14 58 14 62 21 C 71 18 79 25 77 33 C 84 38 82 49 74 50"/><path d="M50 20 C 47 27 53 31 50 38"/><path d="M33 31 C 37 29 41 31 42 35"/><path d="M66 27 C 63 30 64 34 68 35"/></g><path d="M14 44h8l8 30h38l7-24H25" fill="none" stroke="#FFFFFF" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="37" cy="84" r="4.5" fill="#FFFFFF"/><circle cx="63" cy="84" r="4.5" fill="#FFFFFF"/></svg></div>
       <div>
-        <h3 data-i18n="p.name">Lista de Compras</h3>
+        <h3>Mercado na Memória</h3>
         <span class="status"><i></i><span data-i18n="p.status">EM DESENVOLVIMENTO</span></span>
-        <p data-i18n="p.desc">App Android para organizar compras do dia a dia, com várias listas, preços e comparação entre comércios.</p>
+        <p data-i18n="p.desc">App Android de lista de compras: organiza os itens por categoria, mostra o total da compra antes do caixa e ajuda a lembrar do que falta. Nova identidade visual em azul, com tema claro e tema escuro azul-marinho. Em preparação para a Google Play.</p>
         <ul class="feat">
-          <li data-i18n="p.f1">Várias listas, categorias e sugestões</li>
-          <li data-i18n="p.f2">Preço unitário × quantidade e totais</li>
+          <li data-i18n="p.f1">Várias listas, itens agrupados por categoria</li>
+          <li data-i18n="p.f2">Preço × quantidade, total e barra de progresso do carrinho</li>
           <li data-i18n="p.f3">Comparação de preços entre comércios</li>
           <li data-i18n="p.f4">Histórico e relatórios de gastos</li>
-          <li data-i18n="p.f5">Entrada por voz e widget</li>
-          <li data-i18n="p.f6">Tema claro e escuro, 6 idiomas</li>
+          <li data-i18n="p.f5">Entrada por voz, widget e compartilhamento da lista</li>
+          <li data-i18n="p.f6">Deslizar para apagar, com opção de desfazer</li>
         </ul>
-        <div class="tags"><span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">Android</span><span class="tag" data-i18n="p.t1">Banco de dados local</span></div>
+        <div class="tags"><span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">Android</span><span class="tag" data-i18n="p.t1">Banco de dados local</span><span class="tag" data-i18n="p.t2">Tema claro e escuro</span><span class="tag" data-i18n="p.t3">6 idiomas</span></div>
       </div>
     </article>
     </div>
@@ -489,8 +491,8 @@ const I18N = { en:{
  "p.eyebrow":"// side projects","p.title":"Outside work, I build too","p.sub":"My own projects, built from scratch, to understand the product from a developer's side.",
  "e.status":"RELEASED · v2.1.1 ON ITCH.IO","e.desc":"Vertical platformer made in Godot 4. You're a little flame climbing a mountain of ice: fireballs melt the blocks and open the way while the water rises behind you. Plays in desktop and mobile browsers.","e.qa":"Run as a QA project: specs in waves, automated tests and a manual test script for every release, with AI as a pair programmer.",
  "e.f1":"5 stages plus a Remix mode past floor 125","e.f2":"Daily Challenge, the same for everyone","e.f3":"Skin shop, 15 trophies and stats","e.f4":"Keyboard, gamepad and touch controls","e.f5":"18 automated tests, including a golden test of the maps","e.f6":"Reproducible seeds and debug tools","e.t1":"Automated testing","e.cta":"Play on itch.io →",
- "p.name":"Shopping List","p.status":"IN DEVELOPMENT","p.desc":"Android app to organize everyday shopping, with multiple lists, prices and store comparison.",
- "p.f1":"Multiple lists, categories and suggestions","p.f2":"Unit price × quantity and totals","p.f3":"Price comparison across stores","p.f4":"Spending history and reports","p.f5":"Voice input and home-screen widget","p.f6":"Light and dark themes, 6 languages","p.t1":"Local database",
+ "p.status":"IN DEVELOPMENT","p.desc":"An Android shopping list app (the name means “Market in Memory”): it groups items by category, shows your total before checkout and helps you remember what’s missing. New blue visual identity, with a light theme and a navy dark theme. Being prepared for Google Play.",
+ "p.f1":"Multiple lists, items grouped by category","p.f2":"Price × quantity, totals and a cart progress bar","p.f3":"Price comparison across stores","p.f4":"Spending history and reports","p.f5":"Voice input, home-screen widget and list sharing","p.f6":"Swipe to delete, with undo","p.t1":"Local database","p.t2":"Light & dark themes","p.t3":"6 languages",
  "foot":"Built with HTML and CSS, tested before shipping."
 }};
 
