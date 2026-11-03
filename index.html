@@ -109,6 +109,7 @@ h2{font-size:clamp(28px,3.6vw,40px);letter-spacing:-1px;margin:10px 0 8px;line-h
 .proj-ic svg{width:52px;height:52px}
 .proj-ic.app{background:#0F1D3A;border:1px solid rgba(79,216,232,.45);overflow:hidden;box-shadow:0 0 0 4px rgba(79,216,232,.08)}
 .proj-ic.app svg{width:100%;height:100%;display:block}
+.proj-ic.app.light{background:#F2EFEA;border-color:rgba(242,239,234,.6)}
 .proj h3{margin:0 0 4px;font-size:22px}
 .proj .status{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11.5px;font-weight:700;color:var(--gold);border:1px solid rgba(255,209,102,.4);background:rgba(255,209,102,.08);padding:4px 10px;border-radius:999px;margin:6px 0 12px}
 .proj .status i{width:7px;height:7px;border-radius:50%;background:var(--gold);animation:blink 1.6s steps(1) infinite}
@@ -261,7 +262,7 @@ footer{padding:36px 0 48px;color:var(--dim);font-size:13px;text-align:center}
   <div class="wrap">
     <div class="eyebrow" data-i18n="p.eyebrow">// projetos pessoais</div>
     <h2 data-i18n="p.title">Fora do trabalho, também construo</h2>
-    <p class="sub" data-i18n="p.sub">Projetos próprios, do zero, para entender o produto pelo lado de quem desenvolve.</p>
+    <p class="sub" data-i18n="p.sub">Projetos próprios, do zero, para entender o produto pelo lado de quem desenvolve e aplicar QA de ponta a ponta.</p>
     <div class="projs">
     <article class="proj">
       <a class="proj-cover" href="https://jeanqa.itch.io/escalada" target="_blank" rel="noopener"><img src="https://img.itch.zone/aW1nLzMxNzQwMDI1LnBuZw==/original/QF9I6B.png" alt="Capa do jogo Escalada" loading="lazy"></a>
@@ -297,6 +298,24 @@ footer{padding:36px 0 48px;color:var(--dim);font-size:13px;text-align:center}
           <li data-i18n="p.f6">Deslizar para apagar, com opção de desfazer</li>
         </ul>
         <div class="tags"><span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">Android</span><span class="tag" data-i18n="p.t1">Banco de dados local</span><span class="tag" data-i18n="p.t2">Tema claro e escuro</span><span class="tag" data-i18n="p.t3">6 idiomas</span></div>
+      </div>
+    </article>
+    <article class="proj">
+      <div class="proj-ic app light" aria-hidden="true"><svg viewBox="18 18 72 72"><rect x="0" y="0" width="108" height="108" fill="#F2EFEA"/><g transform="rotate(-15 54 55)"><path d="M24,55 A30,10 0 0,1 84,55" fill="none" stroke="#2E7D74" stroke-width="4.5" stroke-linecap="round"/></g><path d="M42,35 H66 V75 H42 Z" fill="#8CC3BA"/><path d="M42,43 H66 M42,50 H66 M42,60 H66 M42,67 H66" stroke="#2E7D74" stroke-opacity=".35" stroke-width="1.6"/><path fill="#2E7D74" d="M41,29 H67 A3,3 0 0,1 70,32 V34 A3,3 0 0,1 67,37 H41 A3,3 0 0,1 38,34 V32 A3,3 0 0,1 41,29 Z"/><path fill="#2E7D74" d="M41,73 H67 A3,3 0 0,1 70,76 V78 A3,3 0 0,1 67,81 H41 A3,3 0 0,1 38,78 V76 A3,3 0 0,1 41,73 Z"/><g transform="rotate(-15 54 55)"><path d="M84,55 A30,10 0 0,1 24,55 M84,55 C87,60 85,66 80,69" fill="none" stroke="#2E7D74" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></g></svg></div>
+      <div>
+        <h3>Carretel</h3>
+        <span class="status"><i></i><span data-i18n="c2.status">EM DESENVOLVIMENTO</span></span>
+        <p data-i18n="c2.desc">App Android de notas e estudos num caderno infinito em loop: em vez de páginas e pastas, você gira uma roda de anotações, com inércia e vibração. Os cartões de estudo voltam na hora certa, com revisão espaçada. Notas e cartões que voltam para você.</p>
+        <p class="qa" data-i18n="c2.qa">Construído em 10 marcos, cada um com critérios de aceite, roteiro de teste manual e validação no celular, com IA como par de programação. 235 testes unitários.</p>
+        <ul class="feat">
+          <li data-i18n="c2.f1">Caderno em loop com inércia, vibração e efeito 3D</li>
+          <li data-i18n="c2.f2">Revisão espaçada (SM-2) com cartões de frente e verso</li>
+          <li data-i18n="c2.f3">Importação de baralhos do Anki</li>
+          <li data-i18n="c2.f4">Várias rodas por assunto, Markdown leve e #tags</li>
+          <li data-i18n="c2.f5">Busca em todas as rodas, marcos e minimapa</li>
+          <li data-i18n="c2.f6">Backup completo e exportação em Markdown</li>
+        </ul>
+        <div class="tags"><span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">Room</span><span class="tag">Android</span><span class="tag" data-i18n="c2.t1">Testes unitários</span></div>
       </div>
     </article>
     </div>
@@ -488,10 +507,12 @@ const I18N = { en:{
  "f.edu":"Education","f.e1":"Bachelor's in IT Management · Anhanguera","f.e2":"Associate degree in Computer Networks · SENAI Florianópolis","f.e3":"Associate degree in Technology Management · SENAC Florianópolis",
  "f.cert":"Certifications & courses","f.c2":"Performance Testing · 4ALL Tests","f.c4":"Scrum in Practice · Udemy","f.c5":"Automated Testing · Udemy",
  "c.eyebrow":"// contact","c.title":"Let's talk?","c.sub":"Open to Senior QA or QA Lead roles, ideally in games, in Brazil or remote. Advanced English.","c.mail":"Send an email",
- "p.eyebrow":"// side projects","p.title":"Outside work, I build too","p.sub":"My own projects, built from scratch, to understand the product from a developer's side.",
+ "p.eyebrow":"// side projects","p.title":"Outside work, I build too","p.sub":"My own projects, built from scratch, to understand the product from a developer's side and apply QA end to end.",
  "e.status":"RELEASED · v2.1.1 ON ITCH.IO","e.desc":"Vertical platformer made in Godot 4. You're a little flame climbing a mountain of ice: fireballs melt the blocks and open the way while the water rises behind you. Plays in desktop and mobile browsers.","e.qa":"Run as a QA project: specs in waves, automated tests and a manual test script for every release, with AI as a pair programmer.",
  "e.f1":"5 stages plus a Remix mode past floor 125","e.f2":"Daily Challenge, the same for everyone","e.f3":"Skin shop, 15 trophies and stats","e.f4":"Keyboard, gamepad and touch controls","e.f5":"18 automated tests, including a golden test of the maps","e.f6":"Reproducible seeds and debug tools","e.t1":"Automated testing","e.cta":"Play on itch.io →",
  "p.status":"IN DEVELOPMENT","p.desc":"An Android shopping list app (the name means “Market in Memory”): it groups items by category, shows your total before checkout and helps you remember what’s missing. New blue visual identity, with a light theme and a navy dark theme. Being prepared for Google Play.",
+ "c2.status":"IN DEVELOPMENT","c2.desc":"An Android notes and study app built as an infinite looping notebook: instead of pages and folders, you spin a wheel of notes, with inertia and haptics. Study cards come back at the right time through spaced repetition. Notes and cards that come back to you. (The name means “Spool”.)","c2.qa":"Built in 10 milestones, each with acceptance criteria, a manual test script and on-device validation, with AI as a pair programmer. 235 unit tests.",
+ "c2.f1":"Looping notebook with inertia, haptics and a 3D drum effect","c2.f2":"Spaced repetition (SM-2) with front/back flip cards","c2.f3":"Anki deck import","c2.f4":"Multiple wheels per subject, light Markdown and #tags","c2.f5":"Search across all wheels, bookmarks and minimap","c2.f6":"Full backup and Markdown export","c2.t1":"Unit testing",
  "p.f1":"Multiple lists, items grouped by category","p.f2":"Price × quantity, totals and a cart progress bar","p.f3":"Price comparison across stores","p.f4":"Spending history and reports","p.f5":"Voice input, home-screen widget and list sharing","p.f6":"Swipe to delete, with undo","p.t1":"Local database","p.t2":"Light & dark themes","p.t3":"6 languages",
  "foot":"Built with HTML and CSS, tested before shipping."
 }};
