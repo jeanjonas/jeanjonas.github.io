@@ -12,158 +12,167 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1430'/%3E%3Cpath d='M16 33l10 10 22-22' stroke='%235ee6a8' stroke-width='7' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M12 0H64V52L52 64H0V12Z' fill='%2316181b'/%3E%3Cpath d='M16 33l10 10 22-22' stroke='%23f0a830' stroke-width='7' fill='none' stroke-linecap='square'/%3E%3C/svg%3E">
 <style>
+/* Direção B · Placar de release: aço escuro, âmbar de sinal, HUD com cantos chanfrados; sprites 8-bit discretos no fundo. */
 :root{
-  --bg:#070b18; --bg2:#0b1430; --card:#0f1a38; --card2:#121f44; --line:rgba(120,160,255,.14);
-  --text:#e8eeff; --muted:#93a6d6; --dim:#62729e;
-  --cyan:#4fd1ff; --violet:#a77bff; --green:#5ee6a8; --pink:#ff6b8a; --gold:#ffd166;
-  --mono:"JetBrains Mono","DejaVu Sans Mono",ui-monospace,monospace;
-  --sans:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-  --r:16px; --max:1120px;
+  --bg:#16181b; --bg2:#1a1d20; --card:#1d2024; --card2:#22262b; --line:rgba(230,232,234,.1); --line2:rgba(230,232,234,.16);
+  --text:#e6e8ea; --muted:#9aa1aa; --dim:#6d747d;
+  --amber:#f0a830; --amber-ink:#16181b; --go:#7cc47f;
+  --hud:"Chakra Petch","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono","DejaVu Sans Mono",ui-monospace,monospace;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --cut:12px; --max:1120px;
+  color-scheme:dark;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:80px}
 body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0;z-index:-1;
-  background:
-   radial-gradient(900px 500px at 85% -5%, rgba(79,209,255,.12), transparent 60%),
-   radial-gradient(700px 500px at -10% 30%, rgba(167,123,255,.12), transparent 60%),
-   linear-gradient(rgba(90,140,255,.045) 1px,transparent 1px) 0 0/44px 44px,
-   linear-gradient(90deg,rgba(90,140,255,.045) 1px,transparent 1px) 0 0/44px 44px,
-   var(--bg);}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1400' height='1600' viewBox='0 0 1400 1600'%3E%3Cg fill='%23e6e8ea' fill-opacity='.055'%3E%3Cg transform='translate(1250 90) rotate(0) scale(11)'%3E%3Cpath d='M1 0h2v1h1V0h2v1h1v3H6v1H5v1H4v1H3V6H2V5H1V4H0V1h1Z'/%3E%3C/g%3E%3Cg transform='translate(40 260) rotate(0) scale(11)'%3E%3Cpath d='M3 0h1v1h1v1h1v1h1v3H5v1h1v1H1V7h1V6H0V3h1V2h1V1h1Z'/%3E%3C/g%3E%3Cg transform='translate(1290 420) rotate(0) scale(10)'%3E%3Cpath d='M2 0h3v1h1v1h1v4H6v1H5v1H2V7H1V6H0V2h1V1h1Z M3 2v4h1V2Z'/%3E%3C/g%3E%3Cg transform='translate(20 640) rotate(0) scale(8)'%3E%3Cpath d='M2 0h12v1h1v1h1v5h-1v1h-3V7H4v1H1V7H0V2h1V1h1Z M3 2v1H2v1h1v1h1V4h1V3H4V2Z M11 2v1h1V2Z M13 4v1h1V4Z'/%3E%3C/g%3E%3Cg transform='translate(1270 820) rotate(0) scale(10)'%3E%3Cpath d='M0 0h1v9H0Z M1 0h2v1H1Z M3 1h2v1H3Z M5 0h2v1H5Z M1 2h2v1H1Z M5 2h2v1H5Z M3 3h2v1H3Z'/%3E%3C/g%3E%3Cg transform='translate(60 1040) rotate(0) scale(11)'%3E%3Cpath d='M3 0h1v2h3v1H6v1H5v2h1v1H5V6H2v1H1V6h1V4H1V3H0V2h3Z'/%3E%3C/g%3E%3Cg transform='translate(1300 1240) rotate(0) scale(8)'%3E%3Cpath d='M1 0h2v1h1V0h2v1h1v3H6v1H5v1H4v1H3V6H2V5H1V4H0V1h1Z'/%3E%3C/g%3E%3Cg transform='translate(40 1420) rotate(0) scale(9)'%3E%3Cpath d='M2 0h3v1h1v1h1v4H6v1H5v1H2V7H1V6H0V2h1V1h1Z M3 2v4h1V2Z'/%3E%3C/g%3E%3C/g%3E%3Cg opacity='.055'%3E%3Cg fill='none' stroke='%23e6e8ea' stroke-width='2'%3E%3Crect x='1210' y='1010' width='120' height='58' rx='6' transform='rotate(-18 1270 1039)'/%3E%3Cg transform='rotate(-18 1270 1039)'%3E%3Cpath d='M1270 1016v46'/%3E%3Ccircle cx='1240' cy='1039' r='5' fill='%23e6e8ea'/%3E%3Ccircle cx='1290' cy='1027' r='5' fill='%23e6e8ea'/%3E%3Ccircle cx='1310' cy='1051' r='5' fill='%23e6e8ea'/%3E%3C/g%3E%3Crect x='70' y='1240' width='64' height='64' rx='10' transform='rotate(14 102 1272)'/%3E%3Cg transform='rotate(14 102 1272)' fill='%23e6e8ea'%3E%3Ccircle cx='86' cy='1256' r='5'/%3E%3Ccircle cx='102' cy='1272' r='5'/%3E%3Ccircle cx='118' cy='1288' r='5'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E") center top/1400px auto repeat-y,
+    linear-gradient(rgba(230,232,234,.028) 1px,transparent 1px) 0 0/24px 24px,
+    linear-gradient(90deg,rgba(230,232,234,.028) 1px,transparent 1px) 0 0/24px 24px,
+    var(--bg);}
 a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 .mono{font-family:var(--mono)}
+.chamfer{clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut))}
 
 /* nav */
-nav{position:sticky;top:0;z-index:20;background:rgba(7,11,24,.78);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{position:sticky;top:0;z-index:20;background:rgba(22,24,27,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:700}
-.logo{width:40px;height:40px;border-radius:10px;object-fit:cover;object-position:center 30%;border:1px solid rgba(167,123,255,.45);box-shadow:0 0 0 3px rgba(79,209,255,.08)}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--hud);font-weight:600;font-size:16px}
+.logo{width:38px;height:38px;object-fit:cover;object-position:center 30%;border:1px solid var(--amber);clip-path:polygon(7px 0,100% 0,100% calc(100% - 7px),calc(100% - 7px) 100%,0 100%,0 7px)}
 .links{display:flex;align-items:center;gap:22px;font-size:14px;color:var(--muted)}
 .links a:hover{color:var(--text)}
-.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-family:var(--mono);font-size:12px}
+.lang{display:flex;border:1px solid var(--line2);overflow:hidden;font-family:var(--mono);font-size:12px}
 .lang button{background:none;border:0;color:var(--muted);padding:6px 11px;cursor:pointer;font:inherit}
-.lang button.on{background:var(--cyan);color:#071022;font-weight:700}
+.lang button.on{background:var(--amber);color:var(--amber-ink);font-weight:600}
 
 /* hero */
-.hero{padding:76px 0 40px}
-.hero .grid2{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
-.pill{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);border:1px solid var(--line);background:rgba(15,26,56,.6);padding:6px 12px;border-radius:999px}
-.pill i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
-h1{font-size:clamp(36px,5vw,58px);line-height:1.04;letter-spacing:-1.5px;margin:20px 0 18px;font-weight:800}
-.grad{background:linear-gradient(90deg,var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{font-size:18px;color:var(--muted);max-width:560px;margin:0 0 28px}
-.cta{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;font-weight:600;font-size:15px;border:1px solid var(--line);background:rgba(15,26,56,.6);transition:.15s}
-.btn:hover{border-color:var(--cyan);transform:translateY(-1px)}
-.btn.primary{background:linear-gradient(90deg,var(--green),var(--cyan));color:#061224;border:0}
+.hero{padding:72px 0 36px}
+.hero .grid2{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero .grid2>*{min-width:0}
+.pill{display:inline-flex;align-items:center;gap:9px;font-size:13px;color:var(--muted)}
+.pill i{width:8px;height:8px;background:var(--go)}
+h1{font-family:var(--hud);font-size:clamp(38px,5.2vw,62px);line-height:1.02;letter-spacing:-.5px;margin:20px 0 18px;font-weight:700;text-wrap:balance}
+.grad{color:inherit}
+.lead{font-size:18px;color:var(--muted);max-width:54ch;margin:0 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;font-family:var(--hud);font-weight:600;font-size:15px;letter-spacing:.2px;border:1px solid var(--line2);background:var(--card);color:var(--text);clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);transition:background .15s,border-color .15s}
+.btn:hover{border-color:var(--amber)}
+.btn.primary{background:var(--amber);color:var(--amber-ink);border-color:var(--amber)}
+.btn.primary:hover{background:#f5b84f}
 .btn svg{width:18px;height:18px}
 
-.term{background:#0a1126;border:1px solid var(--line);border-radius:var(--r);box-shadow:0 30px 80px rgba(0,0,0,.45),0 0 0 1px rgba(79,209,255,.06) inset;overflow:hidden}
-.term-top{display:flex;align-items:center;gap:7px;padding:12px 14px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12px;color:var(--dim)}
-.term-top b{width:11px;height:11px;border-radius:50%;display:inline-block}
-.term-top span{margin-left:8px}
-.term pre{margin:0;padding:18px 18px 20px;font-family:var(--mono);font-size:13.5px;line-height:1.85;color:#9fb2e6;white-space:pre-wrap;min-height:290px}
-.ok{color:var(--green);font-weight:700}.k{color:var(--cyan)}.c{color:var(--dim)}.v{color:var(--violet)}
-.cursor{display:inline-block;width:8px;height:16px;background:var(--cyan);vertical-align:-3px;animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
+.hud{background:var(--card);border:1px solid var(--line2);padding:20px 22px 12px}
+.hud-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-family:var(--hud);font-weight:600;font-size:15px;margin-bottom:6px}
+.hud-top em{font-style:normal;color:var(--go);font-weight:700;letter-spacing:1px}
+.hud-sub{font-size:13px;color:var(--dim);margin:0 0 10px}
+.hud ol{list-style:none;margin:0;padding:0}
+.hud li{display:grid;grid-template-columns:1fr auto;gap:12px;padding:10px 0;border-top:1px solid var(--line);font-size:14.5px}
+.hud li small{display:block;color:var(--dim);font-size:12.5px}
+.hud li b{font-family:var(--mono);font-weight:500;color:var(--go);font-size:13px;align-self:center}
 
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px}
-.stat{background:rgba(15,26,56,.7);border:1px solid var(--line);border-radius:var(--r);padding:20px}
-.stat b{display:block;font-size:34px;font-weight:800;letter-spacing:-1px;line-height:1.1}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:52px}
+.stat{background:var(--bg2);padding:18px 20px}
+.stat b{display:block;font-family:var(--hud);font-size:34px;font-weight:700;line-height:1.1;color:var(--amber);font-variant-numeric:tabular-nums}
 .stat span{color:var(--muted);font-size:14px}
 
 /* sections */
 section{padding:80px 0}
-.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:2px;color:var(--green);text-transform:uppercase}
-h2{font-size:clamp(28px,3.6vw,40px);letter-spacing:-1px;margin:10px 0 8px;line-height:1.15}
-.sub{color:var(--muted);margin:0 0 36px;max-width:640px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px;color:var(--amber)}
+.eyebrow::before{content:"";width:7px;height:7px;background:var(--amber)}
+h2{font-family:var(--hud);font-size:clamp(28px,3.6vw,40px);font-weight:700;letter-spacing:-.3px;margin:10px 0 8px;line-height:1.12;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 36px;max-width:62ch}
 
 /* games */
-.games{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
-.game{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:.2s}
-.game:hover{transform:translateY(-3px);border-color:rgba(79,209,255,.4)}
-.game-top{position:relative;height:150px;display:grid;place-items:center;overflow:hidden}
-.game-top .blur{position:absolute;inset:-30px;background-size:cover;background-position:center;filter:blur(28px) saturate(1.3);opacity:.55;transform:scale(1.2)}
-.game-top img{position:relative;width:100px;height:100px;border-radius:22px;box-shadow:0 12px 30px rgba(0,0,0,.45)}
-.badge{position:absolute;top:12px;left:12px;font-family:var(--mono);font-size:11px;font-weight:700;padding:4px 9px;border-radius:999px;background:rgba(7,11,24,.75);border:1px solid rgba(94,230,168,.45);color:var(--green)}
+.games{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+.game{background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut));transition:border-color .15s}
+.game:hover{border-color:rgba(240,168,48,.5)}
+.game-top{position:relative;height:150px;display:grid;place-items:center;overflow:hidden;border-bottom:1px solid var(--line)}
+.game-top .blur{position:absolute;inset:-30px;background-size:cover;background-position:center;filter:blur(30px) saturate(.6) brightness(.6);opacity:.6;transform:scale(1.2)}
+.game-top img{position:relative;width:100px;height:100px;border-radius:22px;box-shadow:0 12px 30px rgba(0,0,0,.5)}
+.badge{position:absolute;top:12px;left:12px;font-family:var(--mono);font-size:11px;font-weight:600;padding:3px 8px;background:var(--amber);color:var(--amber-ink)}
 .game-body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
-.game h3{margin:0;font-size:20px;letter-spacing:-.3px}
+.game h3{margin:0;font-family:var(--hud);font-size:20px;font-weight:600}
 .meta{font-size:13px;color:var(--dim)}
 .nums{display:flex;gap:18px;font-size:14px;color:var(--muted)}
-.nums b{color:var(--gold);font-size:16px;margin-right:4px}
+.nums b{font-family:var(--hud);color:var(--amber);font-size:17px;margin-right:4px}
 .game p{margin:0;color:var(--muted);font-size:14.5px}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
-.tag{font-family:var(--mono);font-size:11.5px;padding:4px 9px;border-radius:7px;background:rgba(79,209,255,.08);border:1px solid rgba(79,209,255,.22);color:#bfe9ff}
+.tag{font-family:var(--mono);font-size:11.5px;padding:3px 8px;background:rgba(230,232,234,.05);border:1px solid var(--line2);color:#c9ced4}
 .stores{display:flex;gap:8px;margin-top:auto;padding-top:6px}
-.store{font-size:13px;font-weight:600;padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:rgba(7,11,24,.4)}
-.store:hover{border-color:var(--cyan)}
+.store{font-size:13px;font-weight:600;padding:7px 12px;border:1px solid var(--line2);background:var(--bg2)}
+.store:hover{border-color:var(--amber)}
 .note{font-size:12.5px;color:var(--dim);margin-top:16px}
 
-/* personal project */
-.proj{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:var(--r);padding:28px}
-.proj-ic{width:96px;height:96px;border-radius:22px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(94,230,168,.25),rgba(79,209,255,.18));border:1px solid rgba(94,230,168,.35)}
-.proj-ic svg{width:52px;height:52px}
-.proj-ic.app{background:#0F1D3A;border:1px solid rgba(79,216,232,.45);overflow:hidden;box-shadow:0 0 0 4px rgba(79,216,232,.08)}
+/* personal projects */
+.projs{display:grid;gap:18px}
+.proj{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start;background:var(--card);border:1px solid var(--line);padding:28px;clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut))}
+.proj>*{min-width:0}
+.proj-ic{width:96px;height:96px;border-radius:22px;display:grid;place-items:center;overflow:hidden}
+.proj-ic.app{background:#0F1D3A;border:1px solid rgba(79,216,232,.4)}
 .proj-ic.app svg{width:100%;height:100%;display:block}
-.proj-ic.app.light{background:#F2EFEA;border-color:rgba(242,239,234,.6)}
-.proj h3{margin:0 0 4px;font-size:22px}
-.proj .status{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11.5px;font-weight:700;color:var(--gold);border:1px solid rgba(255,209,102,.4);background:rgba(255,209,102,.08);padding:4px 10px;border-radius:999px;margin:6px 0 12px}
-.proj .status i{width:7px;height:7px;border-radius:50%;background:var(--gold);animation:blink 1.6s steps(1) infinite}
-.proj p{margin:0 0 14px;color:var(--muted);font-size:15px}
+.proj-ic.app.light{background:#F2EFEA;border-color:rgba(242,239,234,.5)}
+.proj h3{margin:0 0 4px;font-family:var(--hud);font-size:22px;font-weight:600}
+.proj .status{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11.5px;font-weight:500;color:var(--amber);border:1px solid rgba(240,168,48,.4);padding:3px 9px;margin:6px 0 12px}
+.proj .status i{width:7px;height:7px;background:var(--amber);animation:blink 1.6s steps(1) infinite}
+.proj .status.live{color:var(--go);border-color:rgba(124,196,127,.45)}
+.proj .status.live i{background:var(--go);animation:none}
+@keyframes blink{50%{opacity:0}}
+.proj p{margin:0 0 14px;color:var(--muted);font-size:15px;max-width:72ch}
+.proj .qa{border-left:2px solid var(--amber);padding:2px 0 2px 12px;color:var(--text);font-size:14.5px}
 .feat{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;margin:0 0 16px;padding:0;list-style:none;color:var(--muted);font-size:14.5px}
-.feat li::before{content:"✓ ";color:var(--green);font-weight:700}
-.projs{display:grid;gap:20px}
-.proj-cover{display:block;width:240px;aspect-ratio:630/500;border-radius:16px;overflow:hidden;border:1px solid rgba(255,209,102,.35);background:#0b1430}
-.proj-cover img{width:100%;height:100%;object-fit:cover;display:block;transition:.2s}
+.feat li{position:relative;padding-left:16px}
+.feat li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;background:var(--go)}
+.proj-cover{display:block;width:240px;aspect-ratio:630/500;overflow:hidden;border:1px solid var(--line2);background:var(--bg2)}
+.proj-cover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .2s}
 .proj-cover:hover img{transform:scale(1.03)}
-.proj .status.live{color:var(--green);border-color:rgba(94,230,168,.45);background:rgba(94,230,168,.08)}
-.proj .status.live i{background:var(--green);animation:none;box-shadow:0 0 8px var(--green)}
-.proj .qa{border-left:3px solid var(--violet);padding:2px 0 2px 12px;color:var(--text,#e6ecff);font-size:14.5px}
 .proj .btn{margin-top:16px;padding:10px 16px;font-size:14px}
 @media (max-width:620px){.proj{grid-template-columns:1fr}.feat{grid-template-columns:1fr}.proj-cover{width:100%}}
 
 /* approach */
-.approach{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.step{background:rgba(15,26,56,.65);border:1px solid var(--line);border-radius:var(--r);padding:22px}
-.step .n{font-family:var(--mono);font-size:12px;color:var(--violet)}
-.step h3{margin:6px 0 8px;font-size:18px}
+.approach{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.step{background:var(--bg2);padding:24px}
+.step .n{font-family:var(--mono);font-size:12px;color:var(--amber)}
+.step h3{margin:6px 0 8px;font-family:var(--hud);font-size:19px;font-weight:600}
 .step p{margin:0;color:var(--muted);font-size:14.5px}
 
 /* timeline */
-.tl{position:relative;margin-left:8px}
-.tl::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--cyan),var(--violet),transparent)}
+.tl{position:relative;margin-left:6px}
+.tl::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--amber),rgba(240,168,48,.15))}
 .job{position:relative;padding:0 0 30px 30px}
-.job::before{content:"";position:absolute;left:-6px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--cyan)}
-.job.now::before{border-color:var(--green);box-shadow:0 0 12px var(--green)}
-.job h3{margin:0;font-size:19px}
+.job::before{content:"";position:absolute;left:-5px;top:7px;width:12px;height:12px;background:var(--bg);border:2px solid var(--amber)}
+.job.now::before{background:var(--amber)}
+.job h3{margin:0;font-family:var(--hud);font-size:19px;font-weight:600}
 .job .when{font-family:var(--mono);font-size:12.5px;color:var(--dim);margin:2px 0 8px}
 .job ul{margin:0;padding-left:18px;color:var(--muted);font-size:14.5px}
 .job li{margin:3px 0}
 .company{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:22px}
-.company b{font-size:22px}.company span{color:var(--muted);font-size:14px}
-.older{margin-top:8px;color:var(--muted);font-size:14.5px;border-top:1px dashed var(--line);padding-top:18px}
+.company b{font-family:var(--hud);font-size:22px}.company span{color:var(--muted);font-size:14px}
+.older{margin-top:8px;color:var(--muted);font-size:14.5px;border-top:1px dashed var(--line2);padding-top:18px}
 
 /* skills */
-.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.skill{background:rgba(15,26,56,.65);border:1px solid var(--line);border-radius:var(--r);padding:20px}
-.skill h3{margin:0 0 12px;font-size:15px;color:var(--cyan);font-family:var(--mono);font-weight:600}
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.skill{background:var(--bg2);padding:20px}
+.skill h3{margin:0 0 12px;font-size:15px;color:var(--amber);font-family:var(--hud);font-weight:600}
 .skill ul{list-style:none;margin:0;padding:0;font-size:14.5px;color:var(--muted)}
-.skill li{padding:4px 0;border-bottom:1px solid rgba(120,160,255,.07)}
+.skill li{padding:5px 0;border-bottom:1px solid var(--line)}
 .skill li:last-child{border:0}
 
-.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.box{background:rgba(15,26,56,.65);border:1px solid var(--line);border-radius:var(--r);padding:22px}
-.box h3{margin:0 0 14px;font-size:17px}
-.row{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid rgba(120,160,255,.08);font-size:14.5px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.box{background:var(--card);border:1px solid var(--line);padding:22px}
+.box h3{margin:0 0 14px;font-family:var(--hud);font-size:17px;font-weight:600}
+.row{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14.5px}
 .row:last-child{border:0}
 .row span{color:var(--muted)}.row em{font-style:normal;color:var(--dim);font-family:var(--mono);font-size:12.5px;white-space:nowrap}
 
 /* contact */
-.contact{text-align:center;background:linear-gradient(135deg,rgba(79,209,255,.1),rgba(167,123,255,.12));border:1px solid var(--line);border-radius:24px;padding:56px 24px}
+.contact{text-align:center;background:var(--card);border:1px solid var(--line2);border-top:3px solid var(--amber);padding:56px 24px}
+.contact .eyebrow{justify-content:center}
 .contact .cta{justify-content:center}
 footer{padding:36px 0 48px;color:var(--dim);font-size:13px;text-align:center}
 
@@ -176,13 +185,12 @@ footer{padding:36px 0 48px;color:var(--dim);font-size:13px;text-align:center}
   .links a{display:none}
 }
 @media (max-width:520px){
-  h1{font-size:clamp(28px,8.6vw,40px);letter-spacing:-1px}
+  h1{font-size:clamp(32px,9vw,42px)}
   .wrap{padding:0 16px}
   .hero{padding-top:44px}
   .games{grid-template-columns:1fr}
   .skills{grid-template-columns:1fr}
   .stat b{font-size:28px}
-  .term pre{font-size:12px;min-height:0}
   .brand .name{display:none}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
@@ -195,6 +203,7 @@ footer{padding:36px 0 48px;color:var(--dim);font-size:13px;text-align:center}
     <a class="brand" href="#top"><img class="logo" src="avatar.png" alt="Jean Jonas da Silva" width="40" height="40"><span class="name">Jean Jonas da Silva</span></a>
     <div class="links">
       <a href="#jogos" data-i18n="nav.games">Jogos</a>
+      <a href="#projeto" data-i18n="nav.proj">Projetos</a>
       <a href="#experiencia" data-i18n="nav.exp">Experiência</a>
       <a href="#competencias" data-i18n="nav.skills">Competências</a>
       <a href="#contato" data-i18n="nav.contact">Contato</a>
@@ -210,7 +219,7 @@ footer{padding:36px 0 48px;color:var(--dim);font-size:13px;text-align:center}
   <div class="wrap grid2">
     <div>
       <span class="pill"><i></i><span data-i18n="hero.pill">Receptivo a conversas e networking · Brasil e remoto</span></span>
-      <h1><span data-i18n="hero.h1a" style="white-space:nowrap">QA Lead &amp; QA Sênior</span><br><span class="grad" data-i18n="hero.h1b">em games.</span></h1>
+      <h1><span data-i18n="hero.h1a">QA Lead &amp; QA Sênior</span><br><span class="grad" data-i18n="hero.h1b">em games.</span></h1>
       <p class="lead" data-i18n="hero.lead">7 anos garantindo a qualidade de jogos online de cartas e tabuleiro jogados por milhões de pessoas. Testo, automatizo e lidero: hoje coordeno um time de 5 QAs sem largar a mão na massa.</p>
       <div class="cta">
         <a class="btn primary" href="#jogos" data-i18n="hero.cta">Ver jogos entregues</a>
@@ -221,20 +230,16 @@ footer{padding:36px 0 48px;color:var(--dim);font-size:13px;text-align:center}
       </div>
     </div>
 
-    <div class="term" aria-hidden="true">
-      <div class="term-top"><b style="background:#ff6b8a"></b><b style="background:#ffd166"></b><b style="background:#5ee6a8"></b><span>jean@qa: ~/games</span></div>
-<pre><span class="k">$</span> pytest games/ --suite regression
-<span class="ok">PASSED</span> test_card_deal_rules
-<span class="ok">PASSED</span> test_multiplayer_sync
-<span class="ok">PASSED</span> test_match_reconnect
-<span class="ok">PASSED</span> test_score_calculation
-<span class="k">$</span> npx cypress run --spec lobby
-<span class="ok">✓</span> <span class="c">lobby › entrar na mesa</span>
-<span class="ok">✓</span> <span class="c">lobby › convidar amigo</span>
-<span class="k">$</span> appium --suite mobile-smoke
-<span class="ok">✓</span> <span class="c">android · ios</span>
-<span class="v">→</span> build <span class="ok">✓</span>  test <span class="ok">✓</span>  deploy <span class="ok">✓</span>
-<span class="k">$</span> <span class="cursor"></span></pre>
+    <div class="hud chamfer">
+      <div class="hud-top"><span data-i18n="hud.t">Checklist de go/no-go</span><em>GO</em></div>
+      <p class="hud-sub" data-i18n="hud.s">O que eu confiro antes de liberar uma versão de jogo</p>
+      <ol>
+        <li><span><span data-i18n="hud.1">Regressão automatizada</span><small>Python · Cypress · Appium · Unity</small></span><b>ok</b></li>
+        <li><span><span data-i18n="hud.2">Multiplayer e reconexão</span><small data-i18n="hud.2s">partidas, lobby e convites</small></span><b>ok</b></li>
+        <li><span><span data-i18n="hud.3">Smoke em Android e iOS</span><small data-i18n="hud.3s">aparelhos reais e lojas</small></span><b>ok</b></li>
+        <li><span><span data-i18n="hud.4">KPIs de bugs e estabilidade</span><small data-i18n="hud.4s">severidade, crashes e tendência</small></span><b>ok</b></li>
+        <li><span><span data-i18n="hud.5">Decisão com o time</span><small data-i18n="hud.5s">Engenharia, Produto e QA</small></span><b>go</b></li>
+      </ol>
     </div>
   </div>
 
@@ -250,7 +255,7 @@ footer{padding:36px 0 48px;color:var(--dim);font-size:13px;text-align:center}
 
 <section id="jogos">
   <div class="wrap">
-    <div class="eyebrow" data-i18n="g.eyebrow">// jogos entregues</div>
+    <div class="eyebrow" data-i18n="g.eyebrow">jogos entregues</div>
     <h2 data-i18n="g.title">Jogos que ajudei a entregar</h2>
     <p class="sub" data-i18n="g.sub">Produtos no ar, com jogadores reais. Fui responsável pela qualidade como QA na Fontec (MegaJogos / GameVelvet). Clique e jogue.</p>
     <div class="games" id="games"></div>
@@ -260,7 +265,7 @@ footer{padding:36px 0 48px;color:var(--dim);font-size:13px;text-align:center}
 
 <section id="projeto" style="padding-top:20px">
   <div class="wrap">
-    <div class="eyebrow" data-i18n="p.eyebrow">// projetos pessoais</div>
+    <div class="eyebrow" data-i18n="p.eyebrow">projetos pessoais</div>
     <h2 data-i18n="p.title">Fora do trabalho, também construo</h2>
     <p class="sub" data-i18n="p.sub">Projetos próprios, do zero, para entender o produto pelo lado de quem desenvolve e aplicar QA de ponta a ponta.</p>
     <div class="projs">
@@ -324,7 +329,7 @@ footer{padding:36px 0 48px;color:var(--dim);font-size:13px;text-align:center}
 
 <section id="como">
   <div class="wrap">
-    <div class="eyebrow" data-i18n="a.eyebrow">// como eu trabalho</div>
+    <div class="eyebrow" data-i18n="a.eyebrow">como eu trabalho</div>
     <h2 data-i18n="a.title">Qualidade do refinamento ao release</h2>
     <p class="sub" data-i18n="a.sub">Em jogo online, bug vira jogador perdido. Por isso a qualidade entra cedo e não sai do processo.</p>
     <div class="approach">
@@ -337,7 +342,7 @@ footer{padding:36px 0 48px;color:var(--dim);font-size:13px;text-align:center}
 
 <section id="experiencia">
   <div class="wrap">
-    <div class="eyebrow" data-i18n="e.eyebrow">// experiência</div>
+    <div class="eyebrow" data-i18n="e.eyebrow">experiência</div>
     <h2 data-i18n="e.title">De estagiário a coordenador de QA</h2>
     <p class="sub" data-i18n="e.sub">Toda a minha trajetória em qualidade foi construída na mesma empresa, junto com os jogos.</p>
     <div class="company"><b>Fontec</b><span data-i18n="e.co">MegaJogos / GameVelvet · Florianópolis · jun/2019 – atual</span></div>
@@ -378,7 +383,7 @@ footer{padding:36px 0 48px;color:var(--dim);font-size:13px;text-align:center}
 
 <section id="competencias">
   <div class="wrap">
-    <div class="eyebrow" data-i18n="s.eyebrow">// competências</div>
+    <div class="eyebrow" data-i18n="s.eyebrow">competências</div>
     <h2 data-i18n="s.title">O que eu levo para o time</h2>
     <p class="sub" data-i18n="s.sub">Técnica de teste, automação e gestão, sempre com o olhar de quem conhece jogo por dentro.</p>
     <div class="skills">
@@ -416,7 +421,7 @@ footer{padding:36px 0 48px;color:var(--dim);font-size:13px;text-align:center}
 <section id="contato">
   <div class="wrap">
     <div class="contact">
-      <div class="eyebrow" data-i18n="c.eyebrow">// contato</div>
+      <div class="eyebrow" data-i18n="c.eyebrow">contato</div>
       <h2 data-i18n="c.title">Vamos conversar?</h2>
       <p class="sub" style="margin:0 auto 28px" data-i18n="c.sub">Aberto a posições de QA Sênior ou QA Lead, de preferência em games, no Brasil ou remoto. Inglês avançado.</p>
       <div class="cta">
@@ -476,15 +481,16 @@ const I18N = { en:{
  "hero.pill":"Open to opportunities · Brazil & remote",
  "hero.h1a":"QA Lead & Senior QA","hero.h1b":"for games.",
  "hero.lead":"7 years ensuring quality for online card and board games played by millions. I test, automate and lead: today I manage a team of 5 QAs while staying hands-on.",
- "hero.cta":"See shipped games",
+ "hero.cta":"See shipped games","nav.proj":"Projects",
+ "hud.t":"Go/no-go checklist","hud.s":"What I check before a game version ships","hud.1":"Automated regression","hud.2":"Multiplayer and reconnection","hud.2s":"matches, lobby and invites","hud.3":"Android and iOS smoke tests","hud.3s":"real devices and stores","hud.4":"Bug and stability KPIs","hud.4s":"severity, crashes and trends","hud.5":"Team decision","hud.5s":"Engineering, Product and QA",
  "st.years":"years in software quality","st.games":"live games in this portfolio","st.dl":"combined downloads on Google Play","st.team":"QAs on the team I lead",
- "g.eyebrow":"// shipped games","g.title":"Games I helped ship","g.sub":"Live products with real players. I was responsible for quality as a QA at Fontec (MegaJogos / GameVelvet). Click through and play.",
+ "g.eyebrow":"shipped games","g.title":"Games I helped ship","g.sub":"Live products with real players. I was responsible for quality as a QA at Fontec (MegaJogos / GameVelvet). Click through and play.",
  "g.note":"Downloads and ratings as shown on Google Play, October 2026.",
- "a.eyebrow":"// how I work","a.title":"Quality from refinement to release","a.sub":"In an online game, a bug means a lost player. That's why quality comes in early and never leaves the process.",
+ "a.eyebrow":"how I work","a.title":"Quality from refinement to release","a.sub":"In an online game, a bug means a lost player. That's why quality comes in early and never leaves the process.",
  "a.1t":"QA from refinement","a.1p":"I join definitions with Engineering, Design and Product to catch risks and ambiguous game rules before any code is written.",
  "a.2t":"Automation where it pays off","a.2p":"Automated regression with Python, Cypress, Appium and Unity, wired into CI/CD. Manual and exploratory testing where a human eye makes the difference.",
  "a.3t":"Data-driven decisions","a.3p":"Bug and stability KPIs that drive each release's go/no-go and show where test effort should go.",
- "e.eyebrow":"// experience","e.title":"From intern to QA coordinator","e.sub":"My whole QA career was built at the same company, growing alongside its games.",
+ "e.eyebrow":"experience","e.title":"From intern to QA coordinator","e.sub":"My whole QA career was built at the same company, growing alongside its games.",
  "e.co":"MegaJogos / GameVelvet · Florianópolis, Brazil · Jun 2019 – present",
  "e.j1":"Software Quality Coordinator (QA Lead)","e.j1w":"May 2022 – present",
  "e.j1a":"Lead and mentor a team of 5 QAs (analysts and testers) with individual career plans.",
@@ -500,14 +506,14 @@ const I18N = { en:{
  "e.j4":"Testing Intern","e.j4w":"Jun 2019 – Apr 2020",
  "e.j4a":"Functional and gameplay testing, bug reporting and test scenario design.",
  "e.older":"Before QA: technical support and infrastructure at Cetil Sistemas (2012–2014) and the UFSC University Hospital (2009–2010).",
- "s.eyebrow":"// skills","s.title":"What I bring to a team","s.sub":"Testing technique, automation and management, always from someone who knows games from the inside.",
+ "s.eyebrow":"skills","s.title":"What I bring to a team","s.sub":"Testing technique, automation and management, always from someone who knows games from the inside.",
  "s.c1":"Game testing","s.c1a":"Game rules & gameplay","s.c1b":"Online multiplayer","s.c1c":"Exploratory testing","s.c1d":"Regression & acceptance","s.c1e":"Mobile (Android & iOS)",
  "s.c2":"Automation","s.c3":"Tools","s.c3a":"Performance testing",
  "s.c4":"Leadership & process","s.c4a":"QA team management","s.c4b":"Mentoring & career plans","s.c4c":"Quality KPIs",
  "f.edu":"Education","f.e1":"Bachelor's in IT Management · Anhanguera","f.e2":"Associate degree in Computer Networks · SENAI Florianópolis","f.e3":"Associate degree in Technology Management · SENAC Florianópolis",
  "f.cert":"Certifications & courses","f.c2":"Performance Testing · 4ALL Tests","f.c4":"Scrum in Practice · Udemy","f.c5":"Automated Testing · Udemy",
- "c.eyebrow":"// contact","c.title":"Let's talk?","c.sub":"Open to Senior QA or QA Lead roles, ideally in games, in Brazil or remote. Advanced English.","c.mail":"Send an email",
- "p.eyebrow":"// side projects","p.title":"Outside work, I build too","p.sub":"My own projects, built from scratch, to understand the product from a developer's side and apply QA end to end.",
+ "c.eyebrow":"contact","c.title":"Let's talk?","c.sub":"Open to Senior QA or QA Lead roles, ideally in games, in Brazil or remote. Advanced English.","c.mail":"Send an email",
+ "p.eyebrow":"side projects","p.title":"Outside work, I build too","p.sub":"My own projects, built from scratch, to understand the product from a developer's side and apply QA end to end.",
  "e.status":"RELEASED · v2.1.1 ON ITCH.IO","e.desc":"Vertical platformer made in Godot 4. You're a little flame climbing a mountain of ice: fireballs melt the blocks and open the way while the water rises behind you. Plays in desktop and mobile browsers.","e.qa":"Run as a QA project: specs in waves, automated tests and a manual test script for every release, with AI as a pair programmer.",
  "e.f1":"5 stages plus a Remix mode past floor 125","e.f2":"Daily Challenge, the same for everyone","e.f3":"Skin shop, 15 trophies and stats","e.f4":"Keyboard, gamepad and touch controls","e.f5":"18 automated tests, including a golden test of the maps","e.f6":"Reproducible seeds and debug tools","e.t1":"Automated testing","e.cta":"Play on itch.io →",
  "p.status":"IN DEVELOPMENT","p.desc":"An Android shopping list app (the name means “Market in Memory”): it groups items by category, shows your total before checkout and helps you remember what’s missing. New blue visual identity, with a light theme and a navy dark theme. Being prepared for Google Play.",
